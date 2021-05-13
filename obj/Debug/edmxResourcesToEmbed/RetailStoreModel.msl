@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RetroModelStoreContainer" CdmEntityContainer="RetroEntities">
+    <EntitySetMapping Name="HoaDonViews">
+      <EntityTypeMapping TypeName="RetroModel.HoaDonView">
+        <MappingFragment StoreEntitySet="HoaDonView">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="TenHH" ColumnName="TenHH" />
+          <ScalarProperty Name="QtyHD" ColumnName="QtyHD" />
+          <ScalarProperty Name="DonGiaHH" ColumnName="DonGiaHH" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="SalesDc" ColumnName="SalesDc" />
+          <ScalarProperty Name="NgayGD" ColumnName="NgayGD" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

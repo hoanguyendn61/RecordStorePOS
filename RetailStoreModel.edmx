@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RetroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Retro.dbo.HoaDonView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="HoaDonView">
+          <Key>
+            <PropertyRef Name="MaHD" />
+            <PropertyRef Name="TenHH" />
+            <PropertyRef Name="QtyHD" />
+            <PropertyRef Name="DonGiaHH" />
+            <PropertyRef Name="ThanhTien" />
+            <PropertyRef Name="NgayGD" />
+            <PropertyRef Name="TenKH" />
+          </Key>
+          <Property Name="MaHD" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TenHH" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="QtyHD" Type="int" Nullable="false" />
+          <Property Name="DonGiaHH" Type="float" Nullable="false" />
+          <Property Name="ThanhTien" Type="float" Nullable="false" />
+          <Property Name="SalesDc" Type="int" />
+          <Property Name="NgayGD" Type="datetime" Nullable="false" />
+          <Property Name="TenNV" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="RetroModelStoreContainer">
+          <EntitySet Name="HoaDonView" EntityType="Self.HoaDonView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HoaDonView].[MaHD] AS [MaHD], 
+    [HoaDonView].[TenHH] AS [TenHH], 
+    [HoaDonView].[QtyHD] AS [QtyHD], 
+    [HoaDonView].[DonGiaHH] AS [DonGiaHH], 
+    [HoaDonView].[ThanhTien] AS [ThanhTien], 
+    [HoaDonView].[SalesDc] AS [SalesDc], 
+    [HoaDonView].[NgayGD] AS [NgayGD], 
+    [HoaDonView].[TenNV] AS [TenNV], 
+    [HoaDonView].[TenKH] AS [TenKH]
+    FROM [dbo].[HoaDonView] AS [HoaDonView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RetroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="HoaDonView">
+          <Key>
+            <PropertyRef Name="MaHD" />
+            <PropertyRef Name="TenHH" />
+            <PropertyRef Name="QtyHD" />
+            <PropertyRef Name="DonGiaHH" />
+            <PropertyRef Name="ThanhTien" />
+            <PropertyRef Name="NgayGD" />
+            <PropertyRef Name="TenKH" />
+          </Key>
+          <Property Name="MaHD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenHH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QtyHD" Type="Int32" Nullable="false" />
+          <Property Name="DonGiaHH" Type="Double" Nullable="false" />
+          <Property Name="ThanhTien" Type="Double" Nullable="false" />
+          <Property Name="SalesDc" Type="Int32" />
+          <Property Name="NgayGD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="RetroEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HoaDonViews" EntityType="Self.HoaDonView" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RetroModelStoreContainer" CdmEntityContainer="RetroEntities">
+          <EntitySetMapping Name="HoaDonViews">
+            <EntityTypeMapping TypeName="RetroModel.HoaDonView">
+              <MappingFragment StoreEntitySet="HoaDonView">
+                <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+                <ScalarProperty Name="TenHH" ColumnName="TenHH" />
+                <ScalarProperty Name="QtyHD" ColumnName="QtyHD" />
+                <ScalarProperty Name="DonGiaHH" ColumnName="DonGiaHH" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="SalesDc" ColumnName="SalesDc" />
+                <ScalarProperty Name="NgayGD" ColumnName="NgayGD" />
+                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
