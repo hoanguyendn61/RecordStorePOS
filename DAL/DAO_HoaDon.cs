@@ -21,8 +21,8 @@ namespace RetailStore.DAL
         private string format = "yyyy-MM-dd HH:mm:ss";
         public bool InsertHoaDon_DAL(HoaDon hoaDon)
         {
-            string query = "INSERT dbo.HOADON ( MaHD, NgayGD, MaNV, MaKH) VALUES ('" + hoaDon.Mã_HĐơn + "', '" + hoaDon.Ngày_GD.ToString(format) + "', '" + hoaDon.Mã_NViên+ "', '"+ hoaDon.Mã_KHàng +"')";
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = "INSERT dbo.HOADON ( MaHD, NgayGD, MaNV, MaKH) VALUES ( @maHD , @ngay , @maNV , @maKH )";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hoaDon.Mã_HĐơn, hoaDon.Ngày_GD.ToString(format), hoaDon.Mã_NViên, hoaDon.Mã_KHàng});
             return result > 0;
         }
         public string FindReceiptKeyMax_DAL()
@@ -34,9 +34,8 @@ namespace RetailStore.DAL
         public DataTable PrintHoaDon_DAL(string maHD)
         {
             string query = "SELECT * FROM dbo.HoaDonView WHERE MaHD = '" +maHD+ "'";
-            //HoaDonReport hoaDonIn = new HoaDonReport();
-            //hoaDonIn.DataSource = DataProvider.Instance.ExecuteQuery(query);
-            //hoaDonIn.ShowPreviewDialog();
+            HoaDonReport hoaDonIn = new HoaDonReport();
+            hoaDonIn.DataSource = DataProvider.Instance.ExecuteQuery(query);
             return DataProvider.Instance.ExecuteQuery(query);
         }
         public bool DeleteHD_DAL(string maHD )

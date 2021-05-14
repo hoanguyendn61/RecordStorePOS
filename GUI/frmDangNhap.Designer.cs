@@ -69,10 +69,10 @@
             this.txtMatkhau.ForeColor = System.Drawing.SystemColors.Window;
             this.txtMatkhau.Location = new System.Drawing.Point(123, 96);
             this.txtMatkhau.Name = "txtMatkhau";
-            this.txtMatkhau.PasswordChar = '●';
             this.txtMatkhau.Size = new System.Drawing.Size(262, 26);
             this.txtMatkhau.TabIndex = 2;
             this.txtMatkhau.Text = "admin";
+            this.txtMatkhau.UseSystemPasswordChar = true;
             this.txtMatkhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatkhau_KeyDown);
             // 
             // label1

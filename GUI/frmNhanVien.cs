@@ -206,7 +206,7 @@ namespace RetailStore
                         }
                         else
                         {
-                            MessageBox.Show("SĐT hoặc CMND đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Có dữ liệu không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -230,7 +230,7 @@ namespace RetailStore
                     }
                     else
                     {
-                        MessageBox.Show("SĐT hoặc CMND đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Có dữ liệu không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -334,6 +334,11 @@ namespace RetailStore
         {
             frmGioCong f = new frmGioCong();
             f.ShowDialog();
+        }
+
+        private void txtTenTK_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (e.KeyChar == (char)Keys.Space);
         }
     }
 }

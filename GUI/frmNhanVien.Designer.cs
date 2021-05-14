@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanvien));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpbNhapKH = new System.Windows.Forms.GroupBox();
             this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
             this.nmLuongNV = new System.Windows.Forms.NumericUpDown();
@@ -43,6 +43,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTenTK = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCapnhatNV = new System.Windows.Forms.Button();
+            this.btnLuuNV = new System.Windows.Forms.Button();
+            this.btnHuyNV = new System.Windows.Forms.Button();
+            this.btnXoaNV = new System.Windows.Forms.Button();
+            this.btnThemNV = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDCNV = new System.Windows.Forms.TextBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
@@ -63,11 +68,6 @@
             this.lblTimkiem = new System.Windows.Forms.Label();
             this.dtgvNhanvien = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCapnhatNV = new System.Windows.Forms.Button();
-            this.btnLuuNV = new System.Windows.Forms.Button();
-            this.btnHuyNV = new System.Windows.Forms.Button();
-            this.btnXoaNV = new System.Windows.Forms.Button();
-            this.btnThemNV = new System.Windows.Forms.Button();
             this.grpbNhapKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmLuongNV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -213,6 +213,7 @@
             this.txtPassNV.Name = "txtPassNV";
             this.txtPassNV.Size = new System.Drawing.Size(167, 34);
             this.txtPassNV.TabIndex = 9;
+            this.txtPassNV.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -226,11 +227,13 @@
             // 
             // txtTenTK
             // 
+            this.txtTenTK.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtTenTK.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTK.Location = new System.Drawing.Point(1148, 112);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.Size = new System.Drawing.Size(167, 34);
             this.txtTenTK.TabIndex = 8;
+            this.txtTenTK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenTK_KeyPress);
             // 
             // label4
             // 
@@ -241,6 +244,81 @@
             this.label4.Size = new System.Drawing.Size(106, 31);
             this.label4.TabIndex = 35;
             this.label4.Text = "Tài khoản:";
+            // 
+            // btnCapnhatNV
+            // 
+            this.btnCapnhatNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapnhatNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapnhatNV.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCapnhatNV.Image = ((System.Drawing.Image)(resources.GetObject("btnCapnhatNV.Image")));
+            this.btnCapnhatNV.Location = new System.Drawing.Point(221, 234);
+            this.btnCapnhatNV.Name = "btnCapnhatNV";
+            this.btnCapnhatNV.Size = new System.Drawing.Size(157, 91);
+            this.btnCapnhatNV.TabIndex = 13;
+            this.btnCapnhatNV.Text = "Cập nhật";
+            this.btnCapnhatNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCapnhatNV.UseVisualStyleBackColor = true;
+            this.btnCapnhatNV.Click += new System.EventHandler(this.btnCapnhatNV_Click);
+            // 
+            // btnLuuNV
+            // 
+            this.btnLuuNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuuNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuNV.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLuuNV.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuNV.Image")));
+            this.btnLuuNV.Location = new System.Drawing.Point(412, 234);
+            this.btnLuuNV.Name = "btnLuuNV";
+            this.btnLuuNV.Size = new System.Drawing.Size(152, 91);
+            this.btnLuuNV.TabIndex = 14;
+            this.btnLuuNV.Text = "Lưu";
+            this.btnLuuNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLuuNV.UseVisualStyleBackColor = true;
+            this.btnLuuNV.Click += new System.EventHandler(this.btnLuuNV_Click);
+            // 
+            // btnHuyNV
+            // 
+            this.btnHuyNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuyNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyNV.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnHuyNV.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyNV.Image")));
+            this.btnHuyNV.Location = new System.Drawing.Point(776, 234);
+            this.btnHuyNV.Name = "btnHuyNV";
+            this.btnHuyNV.Size = new System.Drawing.Size(144, 91);
+            this.btnHuyNV.TabIndex = 16;
+            this.btnHuyNV.Text = "Hủy";
+            this.btnHuyNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHuyNV.UseVisualStyleBackColor = true;
+            this.btnHuyNV.Click += new System.EventHandler(this.btnHuyNV_Click);
+            // 
+            // btnXoaNV
+            // 
+            this.btnXoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaNV.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.Image")));
+            this.btnXoaNV.Location = new System.Drawing.Point(600, 234);
+            this.btnXoaNV.Name = "btnXoaNV";
+            this.btnXoaNV.Size = new System.Drawing.Size(144, 91);
+            this.btnXoaNV.TabIndex = 15;
+            this.btnXoaNV.Text = "Xóa";
+            this.btnXoaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoaNV.UseVisualStyleBackColor = true;
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
+            // 
+            // btnThemNV
+            // 
+            this.btnThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemNV.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnThemNV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNV.Image")));
+            this.btnThemNV.Location = new System.Drawing.Point(23, 234);
+            this.btnThemNV.Name = "btnThemNV";
+            this.btnThemNV.Size = new System.Drawing.Size(164, 91);
+            this.btnThemNV.TabIndex = 12;
+            this.btnThemNV.Text = "Thêm";
+            this.btnThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemNV.UseVisualStyleBackColor = true;
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // label3
             // 
@@ -445,23 +523,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvNhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvNhanvien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvNhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvNhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dtgvNhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvNhanvien.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvNhanvien.DefaultCellStyle = dataGridViewCellStyle12;
             this.dtgvNhanvien.Location = new System.Drawing.Point(12, 52);
             this.dtgvNhanvien.Name = "dtgvNhanvien";
             this.dtgvNhanvien.ReadOnly = true;
@@ -483,81 +561,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "DANH SÁCH NHÂN VIÊN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnCapnhatNV
-            // 
-            this.btnCapnhatNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapnhatNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapnhatNV.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCapnhatNV.Image = ((System.Drawing.Image)(resources.GetObject("btnCapnhatNV.Image")));
-            this.btnCapnhatNV.Location = new System.Drawing.Point(221, 234);
-            this.btnCapnhatNV.Name = "btnCapnhatNV";
-            this.btnCapnhatNV.Size = new System.Drawing.Size(157, 91);
-            this.btnCapnhatNV.TabIndex = 13;
-            this.btnCapnhatNV.Text = "Cập nhật";
-            this.btnCapnhatNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCapnhatNV.UseVisualStyleBackColor = true;
-            this.btnCapnhatNV.Click += new System.EventHandler(this.btnCapnhatNV_Click);
-            // 
-            // btnLuuNV
-            // 
-            this.btnLuuNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuuNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuNV.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnLuuNV.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuNV.Image")));
-            this.btnLuuNV.Location = new System.Drawing.Point(412, 234);
-            this.btnLuuNV.Name = "btnLuuNV";
-            this.btnLuuNV.Size = new System.Drawing.Size(152, 91);
-            this.btnLuuNV.TabIndex = 14;
-            this.btnLuuNV.Text = "Lưu";
-            this.btnLuuNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLuuNV.UseVisualStyleBackColor = true;
-            this.btnLuuNV.Click += new System.EventHandler(this.btnLuuNV_Click);
-            // 
-            // btnHuyNV
-            // 
-            this.btnHuyNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuyNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyNV.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnHuyNV.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyNV.Image")));
-            this.btnHuyNV.Location = new System.Drawing.Point(776, 234);
-            this.btnHuyNV.Name = "btnHuyNV";
-            this.btnHuyNV.Size = new System.Drawing.Size(144, 91);
-            this.btnHuyNV.TabIndex = 16;
-            this.btnHuyNV.Text = "Hủy";
-            this.btnHuyNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHuyNV.UseVisualStyleBackColor = true;
-            this.btnHuyNV.Click += new System.EventHandler(this.btnHuyNV_Click);
-            // 
-            // btnXoaNV
-            // 
-            this.btnXoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaNV.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.Image")));
-            this.btnXoaNV.Location = new System.Drawing.Point(600, 234);
-            this.btnXoaNV.Name = "btnXoaNV";
-            this.btnXoaNV.Size = new System.Drawing.Size(144, 91);
-            this.btnXoaNV.TabIndex = 15;
-            this.btnXoaNV.Text = "Xóa";
-            this.btnXoaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoaNV.UseVisualStyleBackColor = true;
-            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
-            // 
-            // btnThemNV
-            // 
-            this.btnThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemNV.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNV.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnThemNV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNV.Image")));
-            this.btnThemNV.Location = new System.Drawing.Point(23, 234);
-            this.btnThemNV.Name = "btnThemNV";
-            this.btnThemNV.Size = new System.Drawing.Size(164, 91);
-            this.btnThemNV.TabIndex = 12;
-            this.btnThemNV.Text = "Thêm";
-            this.btnThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemNV.UseVisualStyleBackColor = true;
-            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // frmNhanvien
             // 

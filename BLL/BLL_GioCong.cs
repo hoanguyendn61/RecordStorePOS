@@ -29,9 +29,21 @@ namespace RetailStore.BLL
         {
             return DAO_GioCong.Instance.GetListGioCong_DAL(f, t);
         }
+        public List<GioCong> GetListGioCong_BLL(DateTime f, DateTime t, string id)
+        {
+            return DAO_GioCong.Instance.GetListGioCong_DAL(f, t, id);
+        }
         public bool InsertTime_BLL(GioCong t)
         {
             return DAO_GioCong.Instance.InsertTime_DAL(t);
+        }
+        public bool UpdateTime_BLL(GioCong t, int id)
+        {
+            return DAO_GioCong.Instance.UpdateTime_DAL(t, id);
+        }
+        public bool DeleteTime_BLL(int id)
+        {
+            return DAO_GioCong.Instance.DeleteTime_DAL(id);
         }
     }
 }

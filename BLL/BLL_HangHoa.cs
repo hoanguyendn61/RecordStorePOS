@@ -38,6 +38,18 @@ namespace RetailStore.BLL
         {
             return DAO_HangHoa.Instance.GetProductByID_DAL(id);
         }
+        public int GetProductQuanityByID_BLL(string id)
+        {
+            int slHH = 0;
+            foreach (HangHoa i in GetListProducts_BLL())
+            {
+                if(i.Mã_Hàng == id)
+                {
+                    slHH = i.Số_Lượng;
+                }
+            }
+            return slHH;
+        }
         public List<HangHoa> GetListProductDGV(List<string> LID)
         {
             List<HangHoa> data = new List<HangHoa>();

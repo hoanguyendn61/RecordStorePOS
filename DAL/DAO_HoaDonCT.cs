@@ -16,10 +16,10 @@ namespace RetailStore.DAL
             private set { DAO_HoaDonCT.instance = value; }
         }
         private DAO_HoaDonCT() { }
-        public bool InsertHoaDonCT(HoaDonCT hoaDonCT)
+        public bool InsertHoaDonCT_DAL(HoaDonCT hoaDonCT)
         {
-            string query = "INSERT dbo.CHITIETHOADON ( MaHD, MaHH, SalesDc, QtyHD) VALUES ('" + hoaDonCT.Mã_HĐơn + "', '" + hoaDonCT.Mã_Hàng + "', '" + hoaDonCT.Giảm_giá + "', '" + hoaDonCT.SL + "')";
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = "INSERT dbo.CHITIETHOADON ( MaHD, MaHH, SalesDc, QtyHD) VALUES ( @maHD , @maHH , @giam , @qty )";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hoaDonCT.Mã_HĐơn, hoaDonCT.Mã_Hàng, hoaDonCT.Giảm_giá, hoaDonCT.SL});
             return result > 0;
         }
       

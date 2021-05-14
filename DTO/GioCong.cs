@@ -19,13 +19,16 @@ namespace RetailStore.DTO
         }
         public GioCong(DataRow row)
         {
+            this.TimeID = Convert.ToInt32(row["TimeID"]);
             this.Tên_NV = row["TenNV"].ToString();
+            this.Ngày_Làm_Việc = (DateTime)row["NgayLamViec"];
             this.Giờ_Vào = (TimeSpan)row["GioVao"];
             this.Giờ_Ra = (TimeSpan)row["GioRa"];
-            this.Ngày_Làm_Việc = (DateTime)row["NgayLamViec"];
             this.Tổng_Giờ = (float)Convert.ToDouble(row["TongGio"]);
         }
         public GioCong() { }
+        private int _timeID;
+        public int TimeID { get => _timeID; set => _timeID = value; }
         private string _maNV;
         public string Mã_NV { get => _maNV; set => _maNV = value; }
         private string _tenNV;

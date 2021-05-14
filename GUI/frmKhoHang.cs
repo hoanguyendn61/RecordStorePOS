@@ -238,7 +238,7 @@ namespace RetailStore
                         MessageBox.Show("Cập nhật hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } else
                     {
-                        MessageBox.Show("Có lỗi khi thực thi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Có dữ liệu không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 LoadDSHangHoa();

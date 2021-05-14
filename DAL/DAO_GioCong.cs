@@ -40,11 +40,37 @@ namespace RetailStore.DAL
             }
             return list;
         }
+        public List<GioCong> GetListGioCong_DAL(DateTime from, DateTime to, string idnv)
+        {
+            List<GioCong> list = new List<GioCong>();
+            string query = "EXEC dbo.PROC_GetListGioCongByEmpID @idnv = '"+idnv+"' , @date1 = '" + from.ToString(formatNgay) + "' , @date2 = '" + to.ToString(formatNgay) + "' ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                GioCong time = new GioCong(item);
+                list.Add(time);
+            }
+            return list;
+        }
         public bool InsertTime_DAL(GioCong t)
         {
             int kq = 0;
             string query = "INSERT dbo.GIOCONG (MaNV, GioVao, GioRa, NgayLamViec) VALUES ( @manv , @in , @out , @date )";
             kq = DataProvider.Instance.ExecuteNonQuery(query, new object[] { t.Mã_NV, t.Giờ_Vào.ToString(formatGio), t.Giờ_Ra.ToString(formatGio), t.Ngày_Làm_Việc.ToString(formatNgay) });
+            return kq > 0;
+        }
+        public bool UpdateTime_DAL(GioCong t, int iD)
+        {
+            int kq = 0;
+            string query = "UPDATE dbo.GIOCONG SET GioVao = @in , GioRa = @out , NgayLamViec = @date WHERE TimeID = @id ";
+            kq = DataProvider.Instance.ExecuteNonQuery(query, new object[] { t.Giờ_Vào.ToString(formatGio), t.Giờ_Ra.ToString(formatGio), t.Ngày_Làm_Việc.ToString(formatNgay), iD });
+            return kq > 0;
+        }
+        public bool DeleteTime_DAL(int id)
+        {
+            int kq = 0;
+            string query = "DELETE dbo.GIOCONG Where TimeID = "+id;
+            kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
     }

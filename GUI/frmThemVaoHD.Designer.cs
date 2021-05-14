@@ -156,7 +156,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label3.Location = new System.Drawing.Point(111, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(496, 53);
+            this.label3.Size = new System.Drawing.Size(488, 52);
             this.label3.TabIndex = 28;
             this.label3.Text = "Nhập số lượng cho sản phẩm";
             // 
@@ -207,7 +207,6 @@
             this.Name = "frmThemVaoHD";
             this.Text = "Nhập số lượng";
             this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThemVaoHD_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nmSLSP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,12 +219,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lb;
         private System.Windows.Forms.Button btnXacnhanSL;
-        public System.Windows.Forms.TextBox txtTenhang;
-        public System.Windows.Forms.TextBox txtMahang;
-        public System.Windows.Forms.TextBox txtDongia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnHuySL;
-        public System.Windows.Forms.NumericUpDown nmSLSP;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTenhang;
+        private System.Windows.Forms.TextBox txtMahang;
+        private System.Windows.Forms.TextBox txtDongia;
+        private System.Windows.Forms.NumericUpDown nmSLSP;
     }
 }

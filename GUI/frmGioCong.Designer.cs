@@ -29,8 +29,8 @@ namespace RetailStore.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGioCong));
             this.dGVGioCong = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,8 +43,13 @@ namespace RetailStore.GUI
             this.btnCapnhatGC = new System.Windows.Forms.Button();
             this.btnXoaGC = new System.Windows.Forms.Button();
             this.btnThemGC = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbNV = new System.Windows.Forms.ComboBox();
+            this.btnLoc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVGioCong)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dGVGioCong
@@ -56,30 +61,30 @@ namespace RetailStore.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVGioCong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVGioCong.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVGioCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVGioCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dGVGioCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVGioCong.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVGioCong.DefaultCellStyle = dataGridViewCellStyle4;
             this.dGVGioCong.Location = new System.Drawing.Point(15, 54);
             this.dGVGioCong.Name = "dGVGioCong";
             this.dGVGioCong.ReadOnly = true;
             this.dGVGioCong.RowHeadersWidth = 51;
             this.dGVGioCong.RowTemplate.Height = 24;
             this.dGVGioCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVGioCong.Size = new System.Drawing.Size(1206, 395);
+            this.dGVGioCong.Size = new System.Drawing.Size(1206, 388);
             this.dGVGioCong.TabIndex = 0;
             // 
             // label1
@@ -87,7 +92,7 @@ namespace RetailStore.GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Josefin Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(63, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 38);
             this.label1.TabIndex = 1;
@@ -98,7 +103,7 @@ namespace RetailStore.GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Josefin Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(12, 53);
+            this.label2.Location = new System.Drawing.Point(63, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 38);
             this.label2.TabIndex = 1;
@@ -110,7 +115,7 @@ namespace RetailStore.GUI
             this.dtpFrom.CalendarTitleForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.dtpFrom.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(143, 13);
+            this.dtpFrom.Location = new System.Drawing.Point(194, 13);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(147, 34);
             this.dtpFrom.TabIndex = 2;
@@ -119,7 +124,7 @@ namespace RetailStore.GUI
             // 
             this.dtpTo.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(143, 57);
+            this.dtpTo.Location = new System.Drawing.Point(194, 57);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(147, 34);
             this.dtpTo.TabIndex = 2;
@@ -129,7 +134,7 @@ namespace RetailStore.GUI
             this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXem.Font = new System.Drawing.Font("Josefin Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXem.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnXem.Location = new System.Drawing.Point(296, 13);
+            this.btnXem.Location = new System.Drawing.Point(347, 13);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(164, 78);
             this.btnXem.TabIndex = 3;
@@ -142,7 +147,7 @@ namespace RetailStore.GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Josefin Sans", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(12, 104);
+            this.label3.Location = new System.Drawing.Point(15, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(349, 44);
             this.label3.TabIndex = 4;
@@ -155,12 +160,13 @@ namespace RetailStore.GUI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.btnCapnhatGC);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnXoaGC);
             this.panel1.Controls.Add(this.btnThemGC);
             this.panel1.Controls.Add(this.dGVGioCong);
-            this.panel1.Location = new System.Drawing.Point(-3, 97);
+            this.panel1.Location = new System.Drawing.Point(-3, 104);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1232, 552);
+            this.panel1.Size = new System.Drawing.Size(1232, 545);
             this.panel1.TabIndex = 5;
             // 
             // btnCapnhatGC
@@ -170,13 +176,14 @@ namespace RetailStore.GUI
             this.btnCapnhatGC.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapnhatGC.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnCapnhatGC.Image = ((System.Drawing.Image)(resources.GetObject("btnCapnhatGC.Image")));
-            this.btnCapnhatGC.Location = new System.Drawing.Point(231, 455);
+            this.btnCapnhatGC.Location = new System.Drawing.Point(545, 448);
             this.btnCapnhatGC.Name = "btnCapnhatGC";
             this.btnCapnhatGC.Size = new System.Drawing.Size(157, 87);
             this.btnCapnhatGC.TabIndex = 11;
             this.btnCapnhatGC.Text = "Cập nhật";
             this.btnCapnhatGC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCapnhatGC.UseVisualStyleBackColor = true;
+            this.btnCapnhatGC.Click += new System.EventHandler(this.btnCapnhatGC_Click);
             // 
             // btnXoaGC
             // 
@@ -185,13 +192,14 @@ namespace RetailStore.GUI
             this.btnXoaGC.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaGC.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnXoaGC.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaGC.Image")));
-            this.btnXoaGC.Location = new System.Drawing.Point(445, 455);
+            this.btnXoaGC.Location = new System.Drawing.Point(756, 448);
             this.btnXoaGC.Name = "btnXoaGC";
             this.btnXoaGC.Size = new System.Drawing.Size(147, 87);
             this.btnXoaGC.TabIndex = 13;
             this.btnXoaGC.Text = "Xóa";
             this.btnXoaGC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoaGC.UseVisualStyleBackColor = true;
+            this.btnXoaGC.Click += new System.EventHandler(this.btnXoaGC_Click);
             // 
             // btnThemGC
             // 
@@ -200,13 +208,61 @@ namespace RetailStore.GUI
             this.btnThemGC.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemGC.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnThemGC.Image = ((System.Drawing.Image)(resources.GetObject("btnThemGC.Image")));
-            this.btnThemGC.Location = new System.Drawing.Point(15, 455);
+            this.btnThemGC.Location = new System.Drawing.Point(326, 448);
             this.btnThemGC.Name = "btnThemGC";
             this.btnThemGC.Size = new System.Drawing.Size(165, 87);
             this.btnThemGC.TabIndex = 10;
             this.btnThemGC.Text = "Thêm";
             this.btnThemGC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemGC.UseVisualStyleBackColor = true;
+            this.btnThemGC.Click += new System.EventHandler(this.btnThemGC_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbNV);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btnLoc);
+            this.groupBox1.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox1.Location = new System.Drawing.Point(542, -4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(599, 102);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Bộ lọc";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Josefin Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 31);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Theo nhân viên:";
+            // 
+            // cbNV
+            // 
+            this.cbNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNV.Font = new System.Drawing.Font("Josefin Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNV.FormattingEnabled = true;
+            this.cbNV.Location = new System.Drawing.Point(167, 33);
+            this.cbNV.Name = "cbNV";
+            this.cbNV.Size = new System.Drawing.Size(299, 39);
+            this.cbNV.TabIndex = 1;
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoc.Font = new System.Drawing.Font("Josefin Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoc.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLoc.Location = new System.Drawing.Point(482, 17);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(111, 72);
+            this.btnLoc.TabIndex = 3;
+            this.btnLoc.Text = "Lọc";
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // frmGioCong
             // 
@@ -214,7 +270,7 @@ namespace RetailStore.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1230, 651);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnXem);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
@@ -225,6 +281,9 @@ namespace RetailStore.GUI
             this.Text = "Quản lý Giờ Công";
             ((System.ComponentModel.ISupportInitialize)(this.dGVGioCong)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +302,9 @@ namespace RetailStore.GUI
         private System.Windows.Forms.Button btnCapnhatGC;
         private System.Windows.Forms.Button btnXoaGC;
         private System.Windows.Forms.Button btnThemGC;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbNV;
+        private System.Windows.Forms.Button btnLoc;
     }
 }

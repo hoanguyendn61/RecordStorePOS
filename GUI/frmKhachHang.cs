@@ -161,7 +161,7 @@ namespace RetailStore
                     }
                     else
                     {
-                        MessageBox.Show("SĐT đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Có dữ liệu không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 LoadDSKhachhang();

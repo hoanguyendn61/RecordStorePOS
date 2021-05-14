@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RetailStore.DAL;
+using RetailStore.DTO;
 namespace RetailStore.BLL
 {
     public class BLL_HoaDon
@@ -27,6 +29,14 @@ namespace RetailStore.BLL
         public string FindReceiptKeyMax_BLL()
         {
             return DAO_HoaDon.Instance.FindReceiptKeyMax_DAL();
+        }
+        public bool InsertHoaDon_BLL(HoaDon hoaDon)
+        {
+            return DAO_HoaDon.Instance.InsertHoaDon_DAL(hoaDon);
+        }
+        public DataTable PrintHoaDon_BLL(string maHD)
+        {
+            return DAO_HoaDon.Instance.PrintHoaDon_DAL(maHD);
         }
     }
 }

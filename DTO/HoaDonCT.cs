@@ -11,9 +11,6 @@ namespace RetailStore.DTO
         public HoaDonCT(HoaDon hd, string maHH, int salesdc, int qtyHD)
         {
             this.Mã_HĐơn = hd.Mã_HĐơn;
-            this.Mã_KHàng = hd.Mã_KHàng;
-            this.Mã_NViên = hd.Mã_NViên;
-            this.Ngày_GD = hd.Ngày_GD;
             this.Mã_Hàng = maHH;
             this.Giảm_giá = salesdc;
             this.SL = qtyHD;

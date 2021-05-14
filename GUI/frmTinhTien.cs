@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Globalization;
 using RetailStore.BLL;
 using DevExpress.XtraReports.UI;
-
 namespace RetailStore
 {
     public partial class frmTinhtien : Form
@@ -40,35 +39,30 @@ namespace RetailStore
             double Tralai = (double)Convert.ToDouble(nmKhachdua.Value) - TongC;
             txtTralai.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", Tralai);
         }
-        double TongC;
         double Tralai;
         private void nmKhachdua_KeyDown(object sender, KeyEventArgs e)
         {
-             TongC = frmthanhToan.TOTAL;
-             Tralai = (double)Convert.ToDouble(nmKhachdua.Value) - TongC;
+            double TongC = frmthanhToan.TOTAL;
+            Tralai = (double)Convert.ToDouble(nmKhachdua.Value) - TongC;
             txtTralai.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", Tralai);
         }
-
         private void btnInHD_Click(object sender, EventArgs e)
         {
-            //if (Tralai >=0)
-            //{
-            //    HoaDonReport hoaDonIn = new HoaDonReport(nmKhachdua.Value.ToString(), txtTralai.Text);
-            //    hoaDonIn.DataSource = HoaDonDAO.Instance.PrintHoaDon(frmthanhToan.txtMaHD.Text);
-            //    hoaDonIn.ShowPreviewDialog();
-            //    frmthanhToan.TangKeyValueHD("HD");
-            //    frmthanhToan.TinhTien();
-            //    this.Close();
-            //} else
-            //{
-            //    MessageBox.Show("KHÁCH ĐƯA THIẾU TIỀN", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+            if (Tralai >= 0)
+            {
+                HoaDonReport hoaDonIn = new HoaDonReport(nmKhachdua.Value.ToString(), txtTralai.Text);
+                hoaDonIn.DataSource = BLL_HoaDon.Instance.PrintHoaDon_BLL(frmthanhToan.txtMaHD.Text);
+                hoaDonIn.ShowPreviewDialog();
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Khách đưa chưa đủ tiền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void btnKoInHD_Click(object sender, EventArgs e)
         {
-            frmthanhToan.TangKeyValueHD();
-            frmthanhToan.TinhTien();
-            this.Close();
+            this.Dispose();
         }
     }
 }

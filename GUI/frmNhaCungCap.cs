@@ -133,7 +133,7 @@ namespace RetailStore.GUI
                     }
                     else
                     {
-                        MessageBox.Show("SĐT hoặc Email đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Có dữ liệu không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 LoadDSSupplier();

@@ -604,3 +604,4 @@ D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\aaa.exe
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\aaa.pdb
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.GUI.frmNhaCungCap.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.GUI.frmGioCong.resources
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.GUI.frmGioCongCT.resources

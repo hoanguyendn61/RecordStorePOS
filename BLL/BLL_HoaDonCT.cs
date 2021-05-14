@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using RetailStore.DAL;
+using RetailStore.DTO;
 namespace RetailStore.BLL
 {
     public class BLL_HoaDonCT
@@ -23,6 +24,10 @@ namespace RetailStore.BLL
         }
         private BLL_HoaDonCT()
         {
+        }
+        public bool InsertHoaDonCT_BLL(HoaDonCT hoaDonCT)
+        {
+            return DAO_HoaDonCT.Instance.InsertHoaDonCT_DAL(hoaDonCT);
         }
     }
 }
