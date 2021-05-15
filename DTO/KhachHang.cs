@@ -19,6 +19,7 @@ namespace RetailStore.DTO
             this.Mã_KHàng = (string)row["MaKH"];
             this.Tên = row["TenKH"].ToString();
             this.SĐT = (string)row["SdtKH"];
+            this.Tổng_GD = Convert.ToDouble(row["TongGiaoDich"].ToString());
         }
         public KhachHang() { }
         private string id;
@@ -39,6 +40,11 @@ namespace RetailStore.DTO
             get { return sdt; }
             set { sdt = value; }
         }
+        private double _tongGD;
+        public double Tổng_GD { get => _tongGD; set => _tongGD = value; }
+
+        
+
         public static int Compare_NameAZ(KhachHang p1, KhachHang p2)
         {
             return p1.Tên.CompareTo(p2.Tên);

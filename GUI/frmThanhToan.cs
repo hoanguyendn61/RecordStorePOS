@@ -84,25 +84,25 @@ namespace RetailStore
             txtMaHD.Text = maHDmax;
         }
         // Tính tiền
-        public double TOTAL = 0;
+        private double TOTAL = 0;
         public void TinhTien()
         {
             double total = 0;
-            double giamGia = (double)Convert.ToDouble(nmDiscount.Value);
+            double giamGia = Convert.ToDouble(nmDiscount.Value);
             foreach (ListViewItem item in lsvHHThanhToan.Items)
             {
                 total += double.Parse(item.SubItems[4].Text, System.Globalization.NumberStyles.Currency);
             }
             TOTAL = total - (total * giamGia / 100);
-            txtTienH.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", total);
-            txtTongC.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", TOTAL);
+            txtTienH.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0}", total);
+            txtTongC.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0}", TOTAL);
         }
         // Thêm item vào danh sách hóa đơn
         private void ThemSP()
         {
             int id = dtgvTTHang.SelectedRows[0].Index;
             string maHang = dtgvTTHang.Rows[id].Cells[0].Value.ToString();
-            int slH = (int)Convert.ToInt32(dtgvTTHang.Rows[id].Cells[3].Value.ToString());
+            int slH = Convert.ToInt32(dtgvTTHang.Rows[id].Cells[3].Value.ToString());
             if (slH == 0)
             {
                 MessageBox.Show("Sản phẩm đã hết", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,7 +116,7 @@ namespace RetailStore
                 if (item == null)
                 {
                     string tenHH = dtgvTTHang.Rows[id].Cells[1].Value.ToString();
-                    string donGia = dtgvTTHang.Rows[id].Cells[4].Value.ToString();
+                    string donGia = dtgvTTHang.Rows[id].Cells[5].Value.ToString();
                     ListViewItem lvi = new ListViewItem(maHang);
                     lvi.SubItems.Add(tenHH); // Cột tên Sản Phẩm
                     lvi.SubItems.Add("1"); // Cột SL Sản Phẩm
@@ -283,7 +283,7 @@ namespace RetailStore
             DateTime ngayGD = DateTime.Now;
             string maNV = frmDangnhap.nv.Mã_NViên;
             int giamGia = (int)Convert.ToInt32(nmDiscount.Value);
-            HoaDon hoadon = new HoaDon(maHD, ngayGD, maNV, maKH);
+            HoaDon hoadon = new HoaDon(maHD, ngayGD, maNV, maKH, TOTAL);
             if (BLL_HoaDon.Instance.InsertHoaDon_BLL(hoadon))
             {
                 for (int i = 0; i < lsvHHThanhToan.Items.Count; i++)
@@ -295,7 +295,7 @@ namespace RetailStore
                 }
                 lsvHHThanhToan.Items.Clear();
                 LoadListProductsTT();
-                frmTinhtien f = new frmTinhtien(this);
+                frmTinhtien f = new frmTinhtien(hoadon);
                 f.ShowDialog();
                 TangKeyValueHD();
                 TinhTien();

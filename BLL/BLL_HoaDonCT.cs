@@ -25,6 +25,10 @@ namespace RetailStore.BLL
         private BLL_HoaDonCT()
         {
         }
+        public List<HoaDonCT> GetListHDCT_BLL(string idHD)
+        {
+            return DAO_HoaDonCT.Instance.GetListHDCT_DAL(idHD);
+        }
         public bool InsertHoaDonCT_BLL(HoaDonCT hoaDonCT)
         {
             return DAO_HoaDonCT.Instance.InsertHoaDonCT_DAL(hoaDonCT);

@@ -26,6 +26,14 @@ namespace RetailStore.BLL
         private BLL_HoaDon()
         {
         }
+        public List<HoaDon> GetListHD_BLL()
+        {
+            return DAO_HoaDon.Instance.GetListHD_DAL();
+        }
+        public List<HoaDon> GetListHDByIDKH_BLL(string idkh)
+        {
+            return DAO_HoaDon.Instance.GetListHD_DAL(idkh);
+        }
         public string FindReceiptKeyMax_BLL()
         {
             return DAO_HoaDon.Instance.FindReceiptKeyMax_DAL();

@@ -41,7 +41,7 @@ namespace RetailStore
             if (nmSLSP.Value <= slH)
             {
                 lvi.SubItems[2].Text = nmSLSP.Value.ToString();
-                double thanhtien = (double)Convert.ToDouble(txtDongia.Text) * (double)Convert.ToDouble(nmSLSP.Value);
+                double thanhtien = Convert.ToDouble(txtDongia.Text) * Convert.ToDouble(nmSLSP.Value);
                 lvi.SubItems[4].Text = thanhtien.ToString();
                 dTT();
                 this.Dispose();

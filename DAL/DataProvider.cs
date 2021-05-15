@@ -44,6 +44,7 @@ namespace RetailStore.DAL
                 adapter.Fill(data);
                 connection.Close();
             }
+            
             return data;
             }
         // INSERT, UPDATE, 

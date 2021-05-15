@@ -145,8 +145,9 @@
             this.nmKhachdua.Size = new System.Drawing.Size(279, 34);
             this.nmKhachdua.TabIndex = 10;
             this.nmKhachdua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nmKhachdua.ThousandsSeparator = true;
             this.nmKhachdua.ValueChanged += new System.EventHandler(this.nmKhachdua_ValueChanged);
-            this.nmKhachdua.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nmKhachdua_KeyDown);
+            this.nmKhachdua.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nmKhachdua_KeyUp);
             // 
             // label4
             // 
@@ -178,7 +179,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTinhtien";
             this.Text = "Tính tiền trả lại";
-            this.Load += new System.EventHandler(this.frmTinhtien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmKhachdua)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

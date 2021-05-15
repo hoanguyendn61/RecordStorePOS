@@ -203,5 +203,30 @@ namespace RetailStore
                 e.Handled = true;
             }
         }
+        // Xem lịch sử giao dịch ứng với mã khách hàng
+        private void btnLichSuGD_Click(object sender, EventArgs e)
+        {
+            int index = dtgvDSKHACH.SelectedCells[0].RowIndex;
+            DataGridViewRow row = dtgvDSKHACH.Rows[index];
+            if (row != null)
+            {
+                string idKH = row.Cells[0].Value.ToString();
+                dgvLichSuGD.DataSource = BLL_HoaDon.Instance.GetListHDByIDKH_BLL(idKH);
+                dgvLichSuGD.Columns[4].Visible = false;
+                dgvLichSuGD.Columns[5].Visible = false;
+            }
+        }
+        // Xem chi tiết hóa đơn ứng với mã hóa đơn
+        private void btnXemCTHD_Click(object sender, EventArgs e)
+        {
+            int index = dgvLichSuGD.SelectedCells[0].RowIndex;
+            DataGridViewRow row = dgvLichSuGD.Rows[index];
+            if (row != null)
+            {
+                string idHD = row.Cells[0].Value.ToString();
+                dgvLichSuGD.DataSource = BLL_HoaDonCT.Instance.GetListHDCT_BLL(idHD);
+                dgvLichSuGD.Columns[0].Visible = false;
+            }
+        }
     }
 }

@@ -19,7 +19,8 @@ namespace RetailStore.DAL
         public List<KhachHang> GetListCustomers_DAL()
         {
             List<KhachHang> list = new List<KhachHang>();
-            string query = "SELECT * FROM KHACHHANG";
+            //string query = "SELECT * FROM KHACHHANG";
+            string query = "EXEC dbo.PROC_GetListKH";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
