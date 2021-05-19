@@ -80,10 +80,10 @@ namespace RetailStore.GUI
         private void AddSupplierBinding()
         {
             txtMaNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "Mã_NCC", true, DataSourceUpdateMode.Never));
-            txtTenNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "Tên_NCC", true, DataSourceUpdateMode.Never));
-            txtSdtNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "Sdt_NCC", true, DataSourceUpdateMode.Never));
-            txtEmailNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "Email_NCC", true, DataSourceUpdateMode.Never));
-            txtDcNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "Đc_NCC", true, DataSourceUpdateMode.Never));
+            txtTenNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "Tên", true, DataSourceUpdateMode.Never));
+            txtSdtNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "SĐT", true, DataSourceUpdateMode.Never));
+            txtEmailNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "Email", true, DataSourceUpdateMode.Never));
+            txtDcNCC.DataBindings.Add(new Binding("Text", dGVSupplier.DataSource, "Địa_chỉ", true, DataSourceUpdateMode.Never));
         }
         private void TangKeySupplier()
         {

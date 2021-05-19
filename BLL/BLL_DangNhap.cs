@@ -28,17 +28,10 @@ namespace RetailStore.BLL
         private BLL_DangNhap()
         {
         }
-        public NhanVien Login_BLL(string username, string password)
+
+        public DangNhap Login_BLL(string username, string password)
         {
-            DangNhap dn = DAO_DangNhap.Instance.Login_DAL(username, password);
-            if (dn == null)
-            {
-                return null;
-            } else
-            {
-                NhanVien nv = BLL_NhanVien.Instance.GetEmployeeByUsername_BLL(dn.Tên_tài_khoản);
-                return nv;
-            }
+            return DAO_DangNhap.Instance.Login_DAL(username, password);
         }
         public List<DangNhap> GetListAccounts_BLL()
         {
@@ -48,9 +41,9 @@ namespace RetailStore.BLL
         //{
         //    return DAO_DangNhap.Instance.InsertAccount_DAL(tenTK, mkNV);
         //}
-        public bool DeleteAccount_BLL(NhanVien nv)
+        public bool DeleteAccount_BLL(string tentk)
         {
-            return DAO_DangNhap.Instance.DeleteAccount_DAL(nv);
+            return DAO_DangNhap.Instance.DeleteAccount_DAL(tentk);
         }
         public bool UpdateAccount_BLL(DangNhap tk)
         {

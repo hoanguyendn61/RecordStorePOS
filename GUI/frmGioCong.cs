@@ -36,7 +36,6 @@ namespace RetailStore.GUI
                 dGVGioCong.DataSource = BLL_GioCong.Instance.GetListGioCong_BLL(from, to);
             }
             dGVGioCong.Columns[0].Visible = false;
-            dGVGioCong.Columns[1].Visible = false;
             if (dGVGioCong.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

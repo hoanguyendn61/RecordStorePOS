@@ -27,9 +27,9 @@ namespace RetailStore.BLL
         private BLL_NhanVien()
         {
         }
-        public NhanVien GetEmployeeByUsername_BLL(string username)
+        public NhanVien GetEmployeeByUsername_BLL(DangNhap dn)
         {
-            return DAO_NhanVien.Instance.GetEmployeeByUsername_DAL(username);
+            return DAO_NhanVien.Instance.GetEmployeeByUsername_DAL(dn);
         }
         public List<NhanVien> GetListEmployees_BLL()
         {
@@ -47,7 +47,7 @@ namespace RetailStore.BLL
         {
             if (tentk != "admin" && tentk != frmDangnhap.nv.Tên_tài_khoản)
             {
-                return BLL_DangNhap.Instance.DeleteAccount_BLL(GetEmployeeByUsername_BLL(tentk));
+                return BLL_DangNhap.Instance.DeleteAccount_BLL(tentk);
             } 
             else 
             {

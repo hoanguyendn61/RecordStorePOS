@@ -210,10 +210,10 @@ namespace RetailStore
             DataGridViewRow row = dtgvDSKHACH.Rows[index];
             if (row != null)
             {
+                lblHD.Text = ""; 
                 string idKH = row.Cells[0].Value.ToString();
-                dgvLichSuGD.DataSource = BLL_HoaDon.Instance.GetListHDByIDKH_BLL(idKH);
-                dgvLichSuGD.Columns[4].Visible = false;
-                dgvLichSuGD.Columns[5].Visible = false;
+                dgvLichSuGD.DataSource = BLL_HoaDon.Instance.GetListHD_BLL(idKH);
+                dgvLichSuGD.Columns[2].Visible = false;
             }
         }
         // Xem chi tiết hóa đơn ứng với mã hóa đơn
@@ -224,8 +224,8 @@ namespace RetailStore
             if (row != null)
             {
                 string idHD = row.Cells[0].Value.ToString();
+                lblHD.Text = idHD;
                 dgvLichSuGD.DataSource = BLL_HoaDonCT.Instance.GetListHDCT_BLL(idHD);
-                dgvLichSuGD.Columns[0].Visible = false;
             }
         }
     }

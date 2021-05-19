@@ -124,6 +124,12 @@
     <Compile Include="GUI\frmGioCongCT.Designer.cs">
       <DependentUpon>frmGioCongCT.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmLichSuBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmLichSuBH.Designer.cs">
+      <DependentUpon>frmLichSuBH.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     <EmbeddedResource Include="GUI\frmGioCongCT.resx">
       <DependentUpon>frmGioCongCT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmLichSuBH.resx">
+      <DependentUpon>frmLichSuBH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +272,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -280,7 +290,6 @@
     <None Include="RetailStoreModel.edmx.diagram">
       <DependentUpon>RetailStoreModel.edmx</DependentUpon>
     </None>
-    <None Include="RetroCityDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

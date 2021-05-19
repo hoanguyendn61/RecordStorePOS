@@ -171,6 +171,7 @@ namespace RetailStore.GUI
             this.Controls.Add(this.lblTenNV);
             this.Controls.Add(this.btnLuuGC);
             this.Controls.Add(this.btnHuyGC);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGioCongCT";
             this.Text = "Thiết lập giờ công";
             this.ResumeLayout(false);

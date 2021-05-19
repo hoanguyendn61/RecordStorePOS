@@ -143,6 +143,7 @@ namespace RetailStore.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVSupplier.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dGVSupplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -380,6 +381,7 @@ namespace RetailStore.GUI
             this.ClientSize = new System.Drawing.Size(1230, 651);
             this.Controls.Add(this.grpbNhapKH);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhaCungCap";
             this.Text = "Quản lý Nhà Cung Cấp";
             this.panel1.ResumeLayout(false);

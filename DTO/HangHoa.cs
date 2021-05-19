@@ -10,33 +10,35 @@ namespace RetailStore.DTO
 {
     public class HangHoa 
     {
+        private LoaiHang cat = new LoaiHang();
+        private NhaCungCap sup = new NhaCungCap();
         public HangHoa(string id, string name, string categoryID, int qty, float cost, float price, DateTime updateAt, string ghichu, string idncc)
         {
-            this.Mã_Hàng = id;
+            this.Mã_hàng = id;
             this.Tên = name;
-            this.Loại = categoryID;
-            this.Số_Lượng = qty;
-            this.Giá_Vốn = cost;
-            this.Đơn_Giá = price;
-            this.Cập_Nhật = updateAt;
-            this.Ghi_Chú = ghichu;
-            this.Nhà_Cung_Cấp = idncc;
+            this.Cat.Mã_Loại = categoryID;
+            this.SL = qty;
+            this.Giá_vốn = cost;
+            this.Đơn_giá = price;
+            this.Cập_nhật = updateAt;
+            this.Ghi_chú = ghichu;
+            this.Sup.Mã_NCC = idncc;
         }
         public HangHoa() { }
         public HangHoa(DataRow row)
         {
-            this.Mã_Hàng = (string)row["MaHH"];
+            this.Mã_hàng = (string)row["MaHH"];
             this.Tên = row["TenHH"].ToString();
             this.Loại = (string)row["LoaiHH"];
-            this.Số_Lượng = (int)Convert.ToDouble(row["QtyHH"].ToString());
-            this.Giá_Vốn = (float)Convert.ToDouble(row["GiaVonHH"].ToString());
-            this.Đơn_Giá = (float)Convert.ToDouble(row["DonGiaHH"].ToString());
-            this.Nhà_Cung_Cấp = (string)row["TenNCC"];
-            this.Cập_Nhật = (DateTime)row["UpdateAt"];
-            this.Ghi_Chú = (string)row["GhiChuHH"];
+            this.SL = (int)Convert.ToDouble(row["QtyHH"].ToString());
+            this.Giá_vốn = (float)Convert.ToDouble(row["GiaVonHH"].ToString());
+            this.Đơn_giá = (float)Convert.ToDouble(row["DonGiaHH"].ToString());
+            this.Nhà_cung_cấp = (string)row["TenNCC"];
+            this.Cập_nhật = (DateTime)row["UpdateAt"];
+            this.Ghi_chú = (string)row["GhiChuHH"];
         }
         private string iD;
-        public string Mã_Hàng
+        public string Mã_hàng
         {
             get { return iD; }
             set { iD = value; }
@@ -47,45 +49,45 @@ namespace RetailStore.DTO
             get { return name; }
             set { name = value; }
         }
-        private string categoryID;
         public string Loại
         {
-            get { return categoryID; }
-            set { categoryID = value; }
+            get { return cat.Tên_Loại; }
+            set { cat.Tên_Loại = value; }
         }
         private int qty;
-        public int Số_Lượng
+        public int SL
         {
             get { return qty; }
             set { qty = value; }
         }
         private float cost;
-        public float Giá_Vốn
+        public float Giá_vốn
         {
             get { return cost; }
             set { cost = value; }
         }
         private float price;
-        public float Đơn_Giá
+        public float Đơn_giá
         {
             get { return price; }
             set { price = value; }
         }
-       
         private DateTime updateDate;
-        public DateTime Cập_Nhật
+        public DateTime Cập_nhật
         {
             get { return updateDate; }
             set { updateDate = value; }
         }
         private string ghichu;
-        public string Ghi_Chú
+        public string Ghi_chú
         {
             get { return ghichu; }
             set { ghichu = value; }
         }
-        private string idncc;
-        public string Nhà_Cung_Cấp { get => idncc; set => idncc = value; }
+        public string Nhà_cung_cấp { get => sup.Tên; set => sup.Tên = value; }
+        internal LoaiHang Cat { get => cat; set => cat = value; }
+        internal NhaCungCap Sup { get => sup; set => sup = value; }
+
         public static int Compare_IDAscending(HangHoa p1, HangHoa p2)
         {
             return p1.iD.CompareTo(p2.iD);

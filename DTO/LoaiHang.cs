@@ -19,6 +19,7 @@ namespace RetailStore.DTO
             this.Mã_Loại = (string)row["MaL"];
             this.Tên_Loại = (string)row["LoaiHH"];
         }
+        public LoaiHang() { }
         private string iD;
         public string Mã_Loại
         {

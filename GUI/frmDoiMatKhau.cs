@@ -16,23 +16,13 @@ namespace RetailStore
         {
             InitializeComponent();
         }
-        //private frmMenu frmMain = null;
-        //private frmMenu FrmMain
-        //{
-        //    get { return frmMain; }
-        //    set { frmMain = value; }
-        //}
-        //public frmDoimatkhau(frmMenu parentForm) : this()
-        //{
-        //    this.FrmMain = parentForm;
-        //}
         private void btnHuyDoiMK_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         private void LuuMK()
         {
-            if (frmDangnhap.nv.Mật_khẩu != txtMKC.Text )
+            if (frmDangnhap.dn.Mật_khẩu != txtMKC.Text )
             {
                 MessageBox.Show("Nhập sai mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMKC.Clear();
@@ -49,8 +39,8 @@ namespace RetailStore
             {
                 if (txtMKM.Text != "" && txtMKC.Text != "" && txtMKM.Text != "")
                 {
-                    frmDangnhap.nv.Mật_khẩu = txtXacNMKM.Text;
-                    if (BLL_DangNhap.Instance.UpdateAccount_BLL(frmDangnhap.nv))
+                    frmDangnhap.dn.Mật_khẩu = txtXacNMKM.Text;
+                    if (BLL_DangNhap.Instance.UpdateAccount_BLL(frmDangnhap.dn))
                     {
                         MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();

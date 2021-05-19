@@ -14,6 +14,7 @@ namespace RetailStore
     public partial class frmDangnhap : Form
     {
         static public NhanVien nv = null;
+        static public DangNhap dn = null;
         public frmDangnhap()
         {
             InitializeComponent();
@@ -25,9 +26,10 @@ namespace RetailStore
         {
             username = txtTaikhoan.Text;
             password = txtMatkhau.Text;
-            nv = BLL_DangNhap.Instance.Login_BLL(username, password);
-            if (nv != null)
+            dn = BLL_DangNhap.Instance.Login_BLL(username, password);
+            if (dn != null)
             {
+                nv = BLL_NhanVien.Instance.GetEmployeeByUsername_BLL(dn);
                 frmMenu f;
                 f = new frmMenu();
                 txtTaikhoan.Clear();

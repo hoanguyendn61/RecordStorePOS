@@ -27,12 +27,12 @@ namespace RetailStore.GUI
             cbTenNV.DisplayMember = "Tên";
             if(data != null)
             {
-                string nameNV = data[0].Cells[2].Value.ToString();
+                string nameNV = data[0].Cells[1].Value.ToString();
                 cbTenNV.SelectedIndex = cbTenNV.FindStringExact(nameNV);
                 cbTenNV.Enabled = false;
-                dtpNgay.Value = Convert.ToDateTime(data[0].Cells[3].Value.ToString());
-                dtpClockIn.Value = Convert.ToDateTime(data[0].Cells[4].Value.ToString());
-                dtpClockOut.Value = Convert.ToDateTime(data[0].Cells[5].Value.ToString());
+                dtpNgay.Value = Convert.ToDateTime(data[0].Cells[2].Value.ToString());
+                dtpClockIn.Value = Convert.ToDateTime(data[0].Cells[3].Value.ToString());
+                dtpClockOut.Value = Convert.ToDateTime(data[0].Cells[4].Value.ToString());
                 timeID = Convert.ToInt32(data[0].Cells[0].Value.ToString());
             }
         }

@@ -57,6 +57,8 @@
             this.dgvLichSuGD = new System.Windows.Forms.DataGridView();
             this.btnLuuKH = new System.Windows.Forms.Button();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblHD = new System.Windows.Forms.Label();
             this.pnlDSKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSKHACH)).BeginInit();
             this.grpbNhapKH.SuspendLayout();
@@ -265,6 +267,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvDSKHACH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDSKHACH.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgvDSKHACH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,6 +317,8 @@
             // 
             // grpbNhapKH
             // 
+            this.grpbNhapKH.Controls.Add(this.lblHD);
+            this.grpbNhapKH.Controls.Add(this.label3);
             this.grpbNhapKH.Controls.Add(this.groupBox1);
             this.grpbNhapKH.Controls.Add(this.btnLuuKH);
             this.grpbNhapKH.Controls.Add(this.txtSDT);
@@ -354,12 +359,16 @@
             this.dgvLichSuGD.AllowUserToAddRows = false;
             this.dgvLichSuGD.AllowUserToDeleteRows = false;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvLichSuGD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLichSuGD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLichSuGD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLichSuGD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvLichSuGD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,7 +381,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -410,6 +419,25 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(315, 34);
             this.txtSDT.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(791, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 36);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Mã hóa đơn";
+            // 
+            // lblHD
+            // 
+            this.lblHD.AutoSize = true;
+            this.lblHD.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHD.Location = new System.Drawing.Point(791, 92);
+            this.lblHD.Name = "lblHD";
+            this.lblHD.Size = new System.Drawing.Size(0, 36);
+            this.lblHD.TabIndex = 10;
             // 
             // frmKhachhang
             // 
@@ -458,5 +486,7 @@
         private System.Windows.Forms.Button btnLichSuGD;
         private System.Windows.Forms.Button btnXemCTHD;
         private System.Windows.Forms.DataGridView dgvLichSuGD;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblHD;
     }
 }

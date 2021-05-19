@@ -55,15 +55,12 @@ namespace RetailStore.DAL
             int kq = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tk.Tên_tài_khoản, tk.Mật_khẩu, tk.Loại_tài_khoản.ToString()});
             return kq > 0;
         }
-        public bool DeleteAccount_DAL(NhanVien nv)
+        public bool DeleteAccount_DAL(string tentk)
         {
             string query;
             int kq = 0;
-            if (DAO_NhanVien.Instance.DeleteEmployee_DAL(nv.Mã_NViên))
-                {
-                    query = "DELETE dbo.DANGNHAP WHERE TaiKhoan = '" + nv.Tên_tài_khoản + "'";
-                    kq = DataProvider.Instance.ExecuteNonQuery(query);
-                }
+            query = "DELETE dbo.DANGNHAP WHERE TaiKhoan = '" + tentk + "'";
+            kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
         public bool UpdateAccount_DAL(DangNhap tk)

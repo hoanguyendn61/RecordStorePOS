@@ -56,14 +56,14 @@ namespace RetailStore.DAL
         {
             int kq = 0;
             string query = "INSERT dbo.GIOCONG (MaNV, GioVao, GioRa, NgayLamViec) VALUES ( @manv , @in , @out , @date )";
-            kq = DataProvider.Instance.ExecuteNonQuery(query, new object[] { t.Mã_NV, t.Giờ_Vào.ToString(formatGio), t.Giờ_Ra.ToString(formatGio), t.Ngày_Làm_Việc.ToString(formatNgay) });
+            kq = DataProvider.Instance.ExecuteNonQuery(query, new object[] { t.Nv.Mã_NViên, t.Giờ_vào.ToString(formatGio), t.Giờ_ra.ToString(formatGio), t.Ngày_làm_việc.ToString(formatNgay) });
             return kq > 0;
         }
         public bool UpdateTime_DAL(GioCong t, int iD)
         {
             int kq = 0;
             string query = "UPDATE dbo.GIOCONG SET GioVao = @in , GioRa = @out , NgayLamViec = @date WHERE TimeID = @id ";
-            kq = DataProvider.Instance.ExecuteNonQuery(query, new object[] { t.Giờ_Vào.ToString(formatGio), t.Giờ_Ra.ToString(formatGio), t.Ngày_Làm_Việc.ToString(formatNgay), iD });
+            kq = DataProvider.Instance.ExecuteNonQuery(query, new object[] { t.Giờ_vào.ToString(formatGio), t.Giờ_ra.ToString(formatGio), t.Ngày_làm_việc.ToString(formatNgay), iD });
             return kq > 0;
         }
         public bool DeleteTime_DAL(int id)

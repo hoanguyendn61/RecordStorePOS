@@ -44,13 +44,13 @@ namespace RetailStore.DAL
         {
             string query = "INSERT dbo.NHACUNGCAP (MaNCC, TenNCC, DcNCC, SdtNCC, EmailNCC)" +
                 "VALUES ( @ma , @ten , @dc , @sdt , @email )";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sup.Mã_NCC, sup.Tên_NCC, sup.Đc_NCC, sup.Sdt_NCC, sup.Email_NCC});
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sup.Mã_NCC, sup.Tên, sup.Địa_chỉ, sup.SĐT, sup.Email});
             return result > 0;
         }
         public bool UpdateSupplier_DAL(NhaCungCap sup)
         {
             string query = string.Format("UPDATE dbo.NHACUNGCAP SET TenNCC = @ten , DcNCC = @dc , SdtNCC = @sdt , EmailNCC = @email WHERE MaNCC = @ma ");
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sup.Tên_NCC, sup.Đc_NCC, sup.Sdt_NCC, sup.Email_NCC, sup.Mã_NCC});
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { sup.Tên, sup.Địa_chỉ, sup.SĐT, sup.Email, sup.Mã_NCC});
             return result > 0;
         }
         public bool DeleteSupplier_DAL(string idSup)

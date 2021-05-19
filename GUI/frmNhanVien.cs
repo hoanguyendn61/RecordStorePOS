@@ -32,7 +32,6 @@ namespace RetailStore
         private void LoadDSNhanVien()
         {
             dsnv.DataSource = BLL_NhanVien.Instance.GetListEmployees_BLL();
-            dtgvNhanvien.Columns["Mật_khẩu"].Visible = false;
             SortListEmployee();
         }
         private List<string> ListUsernamesDGV()
@@ -48,7 +47,7 @@ namespace RetailStore
         {
             int index = dtgvNhanvien.SelectedCells[0].RowIndex;
             DataGridViewRow row = dtgvNhanvien.Rows[index];
-            Boolean i = Convert.ToBoolean(row.Cells[9].Value);
+            Boolean i = Convert.ToBoolean(row.Cells[8].Value);
             if (i == false)
             {
                 rBNV.Checked = true;

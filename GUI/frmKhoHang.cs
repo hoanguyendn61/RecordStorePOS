@@ -84,7 +84,7 @@ namespace RetailStore
                 cbSupplier.Items.Add(new CBBItem
                 {
                     ID = i.Mã_NCC,
-                    Text = i.Tên_NCC
+                    Text = i.Tên
                 });
             }
             cbSupplier.SelectedIndex = 0;
@@ -102,14 +102,14 @@ namespace RetailStore
         // DATABINDING
         private void AddProductBinding()
         {
-            txtMahang.DataBindings.Add(new Binding("Text", dtgvKHOHANG.DataSource, "Mã_Hàng", true, DataSourceUpdateMode.Never));
+            txtMahang.DataBindings.Add(new Binding("Text", dtgvKHOHANG.DataSource, "Mã_hàng", true, DataSourceUpdateMode.Never));
             txtTenhang.DataBindings.Add(new Binding("Text", dtgvKHOHANG.DataSource, "Tên", true, DataSourceUpdateMode.Never));
-            nmGiaban.DataBindings.Add(new Binding("Value", dtgvKHOHANG.DataSource, "Đơn_Giá", true, DataSourceUpdateMode.Never));
-            nmGiaVon.DataBindings.Add(new Binding("Value", dtgvKHOHANG.DataSource, "Giá_Vốn", true, DataSourceUpdateMode.Never));
-            nmQtyHH.DataBindings.Add(new Binding("Value", dtgvKHOHANG.DataSource, "Số_Lượng", true, DataSourceUpdateMode.Never));
-            dtpNgayHH.DataBindings.Add(new Binding("Value", dtgvKHOHANG.DataSource, "Cập_Nhật", true, DataSourceUpdateMode.Never));
-            cbSupplier.DataBindings.Add(new Binding("Text", dtgvKHOHANG.DataSource, "Nhà_Cung_Cấp", true, DataSourceUpdateMode.Never));
-            rtxtGhichu.DataBindings.Add(new Binding("Text", dtgvKHOHANG.DataSource, "Ghi_Chú", true, DataSourceUpdateMode.Never));
+            nmGiaban.DataBindings.Add(new Binding("Value", dtgvKHOHANG.DataSource, "Đơn_giá", true, DataSourceUpdateMode.Never));
+            nmGiaVon.DataBindings.Add(new Binding("Value", dtgvKHOHANG.DataSource, "Giá_vốn", true, DataSourceUpdateMode.Never));
+            nmQtyHH.DataBindings.Add(new Binding("Value", dtgvKHOHANG.DataSource, "SL", true, DataSourceUpdateMode.Never));
+            dtpNgayHH.DataBindings.Add(new Binding("Value", dtgvKHOHANG.DataSource, "Cập_nhật", true, DataSourceUpdateMode.Never));
+            cbSupplier.DataBindings.Add(new Binding("Text", dtgvKHOHANG.DataSource, "Nhà_cung_cấp", true, DataSourceUpdateMode.Never));
+            rtxtGhichu.DataBindings.Add(new Binding("Text", dtgvKHOHANG.DataSource, "Ghi_chú", true, DataSourceUpdateMode.Never));
             cmbMaLoai.DataBindings.Add(new Binding("Text", dtgvKHOHANG.DataSource, "Loại", true, DataSourceUpdateMode.Never));
         }
         // Hàm tăng giá trị thuộc tính mã hàng hóa
@@ -207,9 +207,11 @@ namespace RetailStore
             GetRowValue();
         }
         // CẬP NHẬT THÔNG TIN HÀNG HÓA
+        string idHH;
         private void btnCapnhatHH_Click(object sender, EventArgs e)
         {
             EnableControls();
+            idHH = txtMahang.Text;
             btnThemHH.Enabled = false;
         }
         // LƯU SẢN PHẨM
@@ -231,12 +233,14 @@ namespace RetailStore
                 if (BLL_HangHoa.Instance.InsertProduct_BLL(hangHoa))
                 {
                     MessageBox.Show("Thêm hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } else
+                } 
+                else
                 {
                     if (BLL_HangHoa.Instance.UpdateProduct_BLL(hangHoa))
                     {
                         MessageBox.Show("Cập nhật hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    } else
+                    } 
+                    else
                     {
                         MessageBox.Show("Có dữ liệu không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -322,8 +326,6 @@ namespace RetailStore
             DisableControls();
             GetRowValue();
         }
-
-        
     }
     #endregion
 }

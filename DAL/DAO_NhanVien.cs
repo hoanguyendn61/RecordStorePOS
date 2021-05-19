@@ -29,9 +29,9 @@ namespace RetailStore.DAL
             }
             return list;
         }
-        public NhanVien GetEmployeeByUsername_DAL(string username)
+        public NhanVien GetEmployeeByUsername_DAL(DangNhap dn)
         {
-            string query = "SELECT * FROM dbo.NHANVIEN INNER JOIN dbo.DANGNHAP ON DANGNHAP.TaiKhoan = NHANVIEN.TaiKhoan WHERE NHANVIEN.TaiKhoan = '" + username + "'";
+            string query = "SELECT * FROM dbo.NHANVIEN INNER JOIN dbo.DANGNHAP ON DANGNHAP.TaiKhoan = NHANVIEN.TaiKhoan WHERE NHANVIEN.TaiKhoan = '" + dn.Tên_tài_khoản + "'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return new NhanVien(data.Rows[0]);
         }

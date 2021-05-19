@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using RetailStore.BLL;
 using RetailStore.DTO;
-
+using RetailStore.GUI;
 namespace RetailStore
 {
     public partial class frmThanhtoan : Form
@@ -347,6 +347,12 @@ namespace RetailStore
         private void nmDiscount_KeyUp(object sender, KeyEventArgs e)
         {
             TinhTien();
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            frmLichSuBH frm = new frmLichSuBH();
+            frm.ShowDialog();
         }
     }
     #endregion

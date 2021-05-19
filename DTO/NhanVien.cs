@@ -7,8 +7,9 @@ using System.Data;
 
 namespace RetailStore.DTO
 {
-    public class NhanVien : DangNhap
+    public class NhanVien 
     {
+        private DangNhap dn = new DangNhap();
         public NhanVien(string maNV, string name, string dcNV, string SdtNV, string CmndNV, float LuongNV, DateTime ngayBD, DangNhap tkdn)
         {
             this.Mã_NViên = maNV;
@@ -18,9 +19,7 @@ namespace RetailStore.DTO
             this.CMND = CmndNV;
             this.Ngày_bắt_đầu = ngayBD;
             this.Lương_NV = LuongNV;
-            this.Tên_tài_khoản = tkdn.Tên_tài_khoản;
-            this.Mật_khẩu = tkdn.Mật_khẩu;
-            this.Loại_tài_khoản = tkdn.Loại_tài_khoản;
+            this.dn.Tên_tài_khoản = tkdn.Tên_tài_khoản;
         }
         public NhanVien(DataRow row)
         {
@@ -32,7 +31,6 @@ namespace RetailStore.DTO
             this.Lương_NV = (float)Convert.ToDouble(row["LuongNV"].ToString());
             this.Ngày_bắt_đầu = (DateTime)row["NgayBDNV"];
             this.Tên_tài_khoản = (string)row["TaiKhoan"];
-            this.Mật_khẩu = (string)row["MatKhau"];
             this.Loại_tài_khoản = Convert.ToBoolean(row["TkType"]);
         }
         public NhanVien() { }
@@ -79,6 +77,10 @@ namespace RetailStore.DTO
             get { return ngaybd; }
             set { ngaybd = value; }
         }
+        public string Tên_tài_khoản { get => dn.Tên_tài_khoản; set => dn.Tên_tài_khoản = value; }
+        public Boolean Loại_tài_khoản { get => dn.Loại_tài_khoản; set => dn.Loại_tài_khoản = value; }
+        internal DangNhap Dn { get => dn; set => dn = value; }
+
         public static int Compare_NameAZ(NhanVien p1, NhanVien p2)
         {
             return p1.name.CompareTo(p2.name);

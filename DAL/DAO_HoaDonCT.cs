@@ -32,7 +32,7 @@ namespace RetailStore.DAL
         public bool InsertHoaDonCT_DAL(HoaDonCT hoaDonCT)
         {
             string query = "INSERT dbo.CHITIETHOADON ( MaHD, MaHH, SalesDc, QtyHD) VALUES ( @maHD , @maHH , @giam , @qty )";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hoaDonCT.Mã_HĐ, hoaDonCT.Mã_HH, hoaDonCT.Giảm_giá, hoaDonCT.SL});
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hoaDonCT.HoaDon.Mã_HĐơn, hoaDonCT.Mã_HH, hoaDonCT.Giảm_giá, hoaDonCT.SL});
             return result > 0;
         }
     }

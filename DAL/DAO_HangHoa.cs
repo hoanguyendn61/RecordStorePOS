@@ -44,15 +44,15 @@ namespace RetailStore.DAL
                     {
                         data.Add(new HangHoa
                         {
-                           Mã_Hàng = i.Mã_Hàng,
-                           Tên = i.Tên,
-                           Loại = i.Loại,
-                           Số_Lượng = i.Số_Lượng,
-                           Giá_Vốn = i.Giá_Vốn,
-                           Đơn_Giá = i.Đơn_Giá,
-                           Cập_Nhật = i.Cập_Nhật,
-                           Ghi_Chú = i.Ghi_Chú,
-                           Nhà_Cung_Cấp = i.Nhà_Cung_Cấp
+                            Mã_hàng = i.Mã_hàng,
+                            Tên = i.Tên,
+                            Loại = i.Loại,
+                            SL = i.SL,
+                            Giá_vốn = i.Giá_vốn,
+                            Đơn_giá = i.Đơn_giá,
+                            Cập_nhật = i.Cập_nhật,
+                            Ghi_chú = i.Ghi_chú,
+                            Nhà_cung_cấp = i.Nhà_cung_cấp
                         });
                     }
                 }
@@ -62,17 +62,17 @@ namespace RetailStore.DAL
         private string format = "yyyy-MM-dd HH:mm:ss";
         public bool InsertProduct_DAL(HangHoa hangHoa)
         {
-            string updateAt = hangHoa.Cập_Nhật.ToString(format);
+            string updateAt = hangHoa.Cập_nhật.ToString(format);
             string query = "INSERT dbo.HANGHOA (MaHH, TenHH, MaL, QtyHH, GiaVonHH, DonGiaHH, UpdateAt, GhiChuHH, MaNCC)" +
                 "VALUES ( @maHH , @tenHH , @maL , @qtyHH , @giaVon , @donGia , @updateAt , @ghiChuHH , @maNCC )";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hangHoa.Mã_Hàng, hangHoa.Tên, hangHoa.Loại, hangHoa.Số_Lượng, hangHoa.Giá_Vốn, hangHoa.Đơn_Giá, updateAt, hangHoa.Ghi_Chú, hangHoa.Nhà_Cung_Cấp});
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hangHoa.Mã_hàng, hangHoa.Tên, hangHoa.Cat.Mã_Loại, hangHoa.SL, hangHoa.Giá_vốn, hangHoa.Đơn_giá, updateAt, hangHoa.Ghi_chú, hangHoa.Sup.Mã_NCC});
             return result > 0;
         }
         public bool UpdateProduct_DAL(HangHoa hangHoa)
         {
-            string updateAt = hangHoa.Cập_Nhật.ToString(format);
+            string updateAt = hangHoa.Cập_nhật.ToString(format);
             string query = string.Format("UPDATE dbo.HANGHOA SET TenHH = @tenHH , MaL = @maL , QtyHH = @sl , GiaVonHH = @giaVon , DonGiaHH = @donGia ,  UpdateAt = @updateAt , GhiChuHH = @ghiChu , MaNCC = @maNCC WHERE MaHH = @maHH ");
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {hangHoa.Tên, hangHoa.Loại, hangHoa.Số_Lượng, hangHoa.Giá_Vốn, hangHoa.Đơn_Giá, updateAt, hangHoa.Ghi_Chú, hangHoa.Nhà_Cung_Cấp, hangHoa.Mã_Hàng});
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {hangHoa.Tên, hangHoa.Cat.Mã_Loại, hangHoa.SL, hangHoa.Giá_vốn, hangHoa.Đơn_giá, updateAt, hangHoa.Ghi_chú, hangHoa.Sup.Mã_NCC, hangHoa.Mã_hàng});
             return result > 0;
         }
         public bool DeleteProduct_DAL(string idProduct)

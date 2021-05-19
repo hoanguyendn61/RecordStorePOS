@@ -4,14 +4,15 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RetailStore.BLL;
 namespace RetailStore.DTO
 {
-    public class HoaDonCT //: HoaDon
+    public class HoaDonCT 
     {
+        private HoaDon hoaDon = new HoaDon();
+        private HangHoa p = new HangHoa();
         public HoaDonCT(HoaDon hd, string maHH, int salesdc, int qtyHD)
         {
-            this.Mã_HĐ = hd.Mã_HĐơn;
+            this.HoaDon.Mã_HĐơn = hd.Mã_HĐơn;
             this.Mã_HH = maHH;
             this.Giảm_giá = salesdc;
             this.SL = qtyHD;
@@ -25,12 +26,10 @@ namespace RetailStore.DTO
             this.Giảm_giá = Convert.ToInt32(row["SalesDc"]);
             this.Thành_tiền = Convert.ToDouble(row["ThanhTien"]);
         }
-        private HoaDon hoaDon = new HoaDon();
-        public string Mã_HĐ { get => hoaDon.Mã_HĐơn; set => hoaDon.Mã_HĐơn = value; }
-        private HangHoa p = new HangHoa();
-        public string Mã_HH { get => p.Mã_Hàng; set => p.Mã_Hàng = value; }
+        internal HoaDon HoaDon { get => hoaDon; set => hoaDon = value; }
+        public string Mã_HH { get => p.Mã_hàng; set => p.Mã_hàng = value; }
         public string Tên_HH { get => p.Tên; set => p.Tên = value; }
-        public float Đơn_giá { get => p.Đơn_Giá; set => p.Đơn_Giá = value; }
+        public float Đơn_giá { get => p.Đơn_giá; set => p.Đơn_giá = value; }
         private int Qty;
         public int SL
         {

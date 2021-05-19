@@ -44,18 +44,29 @@ namespace RetailStore.DAL
             }
             return list;
         }
+        // Get list HĐ between dates, employee, customer
+        string formatFrom = "yyyy-MM-dd 00:00:00.000";
+        string formatTo = "yyyy-MM-dd 23:59:59.000";
+        public List<HoaDon> GetListHD_DAL(DateTime from, DateTime to)
+        {
+            List<HoaDon> list = new List<HoaDon>();
+            string query = "EXEC dbo.PROC_GetListHDByDates @date1 = '"+from.ToString(formatFrom) +"', @date2 = '"+to.ToString(formatTo) +"' ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                HoaDon hd = new HoaDon(item);
+                list.Add(hd);
+            }
+            return list;
+        }
+
+
         private string format = "yyyy-MM-dd HH:mm:ss";
         public bool InsertHoaDon_DAL(HoaDon hoaDon)
         {
             string query = "INSERT dbo.HOADON ( MaHD, NgayGD, MaNV, MaKH) VALUES ( @maHD , @ngay , @maNV , @maKH )";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hoaDon.Mã_HĐơn, hoaDon.Ngày_GD.ToString(format), hoaDon.Nv.Mã_NViên, hoaDon.Kh.Mã_KHàng});
             return result > 0;
-        }
-        public string FindReceiptKeyMax_DAL()
-        {
-            string query = "SELECT MAX(MaHD) FROM dbo.HOADON";
-            string kq = DataProvider.Instance.ExecuteScalar(query).ToString();
-            return kq;
         }
         public DataTable PrintHoaDon_DAL(string maHD)
         {

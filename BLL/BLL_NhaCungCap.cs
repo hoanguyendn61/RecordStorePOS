@@ -67,15 +67,15 @@ namespace RetailStore.BLL
             {
                 if (Name != "")
                 {
-                    if (i.Tên_NCC.IndexOf(Name, StringComparison.OrdinalIgnoreCase) >= 0)
+                    if (i.Tên.IndexOf(Name, StringComparison.OrdinalIgnoreCase) >= 0)
                     {
                         data.Add(new NhaCungCap
                         {
                             Mã_NCC = i.Mã_NCC,
-                            Tên_NCC = i.Tên_NCC,
-                            Đc_NCC = i.Đc_NCC,
-                            Sdt_NCC = i.Sdt_NCC,
-                            Email_NCC = i.Email_NCC
+                            Tên = i.Tên,
+                            Địa_chỉ = i.Địa_chỉ,
+                            SĐT = i.SĐT,
+                            Email = i.Email
                         });
                     }
                 }

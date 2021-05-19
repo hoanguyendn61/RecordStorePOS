@@ -4,10 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace RetailStore.DTO
 {
-    public class HoaDon
+    public class HoaDon 
     {
         private NhanVien nv = new NhanVien();
         private KhachHang kh = new KhachHang();
@@ -23,13 +22,17 @@ namespace RetailStore.DTO
         public HoaDon(DataRow row)
         {
             this.Mã_HĐơn = (string)row["MaHD"];
+            this.Nv.Mã_NViên = (string)row["MaNV"];
+            this.Kh.Mã_KHàng = (string)row["MaKH"];
             this.Tên_người_bán = (string)row["TenNV"];
+            this.Tên_khách_hàng = (string)row["TenKH"];
             this.Ngày_GD = Convert.ToDateTime(row["NgayGD"]);
             this.Tổng_cộng = (float)Convert.ToDouble(row["TongCong"]);
         }
         private string MaHD;
         public string Mã_HĐơn { get => MaHD; set => MaHD = value; }
         public string Tên_người_bán { get => Nv.Tên; set => Nv.Tên = value; }
+        public string Tên_khách_hàng { get => Kh.Tên; set => Kh.Tên = value; }
         private DateTime NgayGD;
         public DateTime Ngày_GD
         {
@@ -42,7 +45,7 @@ namespace RetailStore.DTO
             get { return _tongCong; }
             set { _tongCong = value; }
         }
-        public NhanVien Nv { get => nv; set => nv = value; }
-        public KhachHang Kh { get => kh; set => kh = value; }
+        internal NhanVien Nv { get => nv; set => nv = value; }
+        internal KhachHang Kh { get => kh; set => kh = value; }
     }
 }

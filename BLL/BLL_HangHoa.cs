@@ -43,9 +43,9 @@ namespace RetailStore.BLL
             int slHH = 0;
             foreach (HangHoa i in GetListProducts_BLL())
             {
-                if(i.Mã_Hàng == id)
+                if(i.Mã_hàng == id)
                 {
-                    slHH = i.Số_Lượng;
+                    slHH = i.SL;
                 }
             }
             return slHH;
@@ -70,15 +70,15 @@ namespace RetailStore.BLL
                     {
                         data.Add(new HangHoa
                         {
-                            Mã_Hàng = i.Mã_Hàng,
+                            Mã_hàng = i.Mã_hàng,
                             Tên = i.Tên,
                             Loại = i.Loại,
-                            Số_Lượng = i.Số_Lượng,
-                            Giá_Vốn = i.Giá_Vốn,
-                            Đơn_Giá = i.Đơn_Giá,
-                            Cập_Nhật = i.Cập_Nhật,
-                            Ghi_Chú = i.Ghi_Chú,
-                            Nhà_Cung_Cấp = i.Nhà_Cung_Cấp
+                            SL = i.SL,
+                            Giá_vốn = i.Giá_vốn,
+                            Đơn_giá = i.Đơn_giá,
+                            Cập_nhật = i.Cập_nhật,
+                            Ghi_chú = i.Ghi_chú,
+                            Nhà_cung_cấp = i.Nhà_cung_cấp
                         });
                     }
                 }
@@ -102,9 +102,9 @@ namespace RetailStore.BLL
                 string maHHMax = cat.Mã_Loại + "0001";
                 foreach (HangHoa i in GetListProducts_BLL(cat.Tên_Loại))
                 {
-                    if (String.Compare(maHHMax, i.Mã_Hàng) < 0)
+                    if (String.Compare(maHHMax, i.Mã_hàng) < 0)
                     {
-                        maHHMax = i.Mã_Hàng;
+                        maHHMax = i.Mã_hàng;
                     }
                 }
             return maHHMax;

@@ -12,32 +12,32 @@ namespace RetailStore.DTO
         public NhaCungCap(string id, string name, string dc, string sdt, string email)
         {
             this.Mã_NCC = id;
-            this.Tên_NCC = name;
-            this.Đc_NCC = dc;
-            this.Sdt_NCC = sdt;
-            this.Email_NCC = email;
+            this.Tên = name;
+            this.Địa_chỉ = dc;
+            this.SĐT = sdt;
+            this.Email = email;
         }
         public NhaCungCap(DataRow row)
         {
             this.Mã_NCC = (string)row["MaNCC"];
-            this.Tên_NCC = (string)row["TenNCC"];
-            this.Đc_NCC = (string)row["DcNCC"];
-            this.Sdt_NCC = (string)row["SdtNCC"];
-            this.Email_NCC = (string)row["EmailNCC"];
+            this.Tên = (string)row["TenNCC"];
+            this.Địa_chỉ = (string)row["DcNCC"];
+            this.SĐT = (string)row["SdtNCC"];
+            this.Email = (string)row["EmailNCC"];
         }
         public NhaCungCap() { }
         public string Mã_NCC { get; set; }
-        public string Tên_NCC { get; set; }
-        public string Đc_NCC { get; set; }
-        public string Sdt_NCC { get; set; }
-        public string Email_NCC { get; set; }
+        public string Tên { get; set; }
+        public string Địa_chỉ { get; set; }
+        public string SĐT { get; set; }
+        public string Email { get; set; }
         public static int Compare_NameAZ(NhaCungCap p1, NhaCungCap p2)
         {
-            return p1.Tên_NCC.CompareTo(p2.Tên_NCC);
+            return p1.Tên.CompareTo(p2.Tên);
         }
         public static int Compare_NameZA(NhaCungCap p1, NhaCungCap p2)
         {
-            return p2.Tên_NCC.CompareTo(p1.Tên_NCC);
+            return p2.Tên.CompareTo(p1.Tên);
         }
     }
 }
