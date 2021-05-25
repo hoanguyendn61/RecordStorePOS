@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RetroCityPBL3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="View_BHCuoiNgay">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="TenKH" />
+      <PropertyRef Name="TenNV" />
+      <PropertyRef Name="NgayGD" />
+    </Key>
+    <Property Name="MaHD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayGD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ThoiGian" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SL" Type="Int32" />
+    <Property Name="TongTien" Type="Double" />
+    <Property Name="GiamGia" Type="Double" />
+    <Property Name="DoanhThu" Type="Double" />
+  </EntityType>
+  <EntityType Name="View_BHHangHoa">
+    <Key>
+      <PropertyRef Name="MaHH" />
+      <PropertyRef Name="TenHH" />
+      <PropertyRef Name="SL_Ban" />
+    </Key>
+    <Property Name="MaHH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenHH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SL_Ban" Type="Int32" Nullable="false" />
+    <Property Name="DoanhThu" Type="Double" />
+    <Property Name="NgayGD" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="View_HHCuoiNgay">
+    <Key>
+      <PropertyRef Name="MaHH" />
+      <PropertyRef Name="TenHH" />
+      <PropertyRef Name="SL_Ban" />
+      <PropertyRef Name="NgayGD" />
+    </Key>
+    <Property Name="MaHH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenHH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SL_Ban" Type="Int32" Nullable="false" />
+    <Property Name="DoanhThu" Type="Double" />
+    <Property Name="NgayGD" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_LNBanHang">
+    <Key>
+      <PropertyRef Name="NgayGD" />
+    </Key>
+    <Property Name="NgayGD" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TongTienHang" Type="Double" />
+    <Property Name="GiamGia" Type="Double" />
+    <Property Name="DoanhThu" Type="Double" />
+    <Property Name="TongGiaVon" Type="Double" />
+    <Property Name="LoiNhuanGop" Type="Double" />
+  </EntityType>
+  <EntityType Name="View_LNHangHoa">
+    <Key>
+      <PropertyRef Name="MaHH" />
+      <PropertyRef Name="TenHH" />
+      <PropertyRef Name="SL_Ban" />
+    </Key>
+    <Property Name="MaHH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenHH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SL_Ban" Type="Int32" Nullable="false" />
+    <Property Name="DoanhThu" Type="Double" />
+    <Property Name="TongGiaVon" Type="Double" />
+    <Property Name="LoiNhuan" Type="Double" />
+    <Property Name="NgayGD" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="View_NVBanHang">
+    <Key>
+      <PropertyRef Name="MaNV" />
+      <PropertyRef Name="TenNV" />
+    </Key>
+    <Property Name="NgayGD" Type="DateTime" Precision="0" />
+    <Property Name="MaNV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SL_HD" Type="Int32" />
+    <Property Name="DoanhThu" Type="Double" />
+  </EntityType>
+  <EntityContainer Name="RetroCityPBL3Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="View_BHCuoiNgay" EntityType="Self.View_BHCuoiNgay" />
+    <EntitySet Name="View_BHHangHoa" EntityType="Self.View_BHHangHoa" />
+    <EntitySet Name="View_HHCuoiNgay" EntityType="Self.View_HHCuoiNgay" />
+    <EntitySet Name="View_LNBanHang" EntityType="Self.View_LNBanHang" />
+    <EntitySet Name="View_LNHangHoa" EntityType="Self.View_LNHangHoa" />
+    <EntitySet Name="View_NVBanHang" EntityType="Self.View_NVBanHang" />
+  </EntityContainer>
+</Schema>

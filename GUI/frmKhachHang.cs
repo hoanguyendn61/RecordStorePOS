@@ -21,6 +21,7 @@ namespace RetailStore
             InitializeComponent();
             LoadData();
         }
+        #region method
         private void LoadData()
         {
             dtgvDSKHACH.DataSource = dskh;
@@ -43,6 +44,12 @@ namespace RetailStore
                     break;
                 case 2:
                     dskh.DataSource = BLL_KhachHang.Instance.SortListCustomer_BLL(KhachHang.Compare_NameZA);
+                    break;
+                case 3:
+                    dskh.DataSource = BLL_KhachHang.Instance.SortListCustomer_BLL(KhachHang.Compare_AmountSpentASC);
+                    break;
+                case 4:
+                    dskh.DataSource = BLL_KhachHang.Instance.SortListCustomer_BLL(KhachHang.Compare_AmountSpentDESC);
                     break;
                 default:
                     dskh.DataSource = BLL_KhachHang.Instance.GetListCustomers_BLL();
@@ -82,18 +89,21 @@ namespace RetailStore
             txtSDT.Text = row.Cells[2].Value.ToString();
 
         }
-        private void btnHuyKH_Click(object sender, EventArgs e)
-        {
-            DisableControls();
-            dtgvDSKHACH.CurrentCell = dtgvDSKHACH.Rows[0].Cells[0];
-            GetRowValue();
-        }
         void AddCustomersBinding()
         {
             txtMaKH.DataBindings.Add(new Binding("Text", dtgvDSKHACH.DataSource, "Mã_KHàng", true, DataSourceUpdateMode.Never));
             txtTenKH.DataBindings.Add(new Binding("Text", dtgvDSKHACH.DataSource, "Tên", true, DataSourceUpdateMode.Never));
             txtSDT.DataBindings.Add(new Binding("Text", dtgvDSKHACH.DataSource, "SĐT", true, DataSourceUpdateMode.Never));
         }
+        #endregion
+        #region events
+        private void btnHuyKH_Click(object sender, EventArgs e)
+        {
+            DisableControls();
+            dtgvDSKHACH.CurrentCell = dtgvDSKHACH.Rows[0].Cells[0];
+            GetRowValue();
+        }
+        
         // THÊM KHÁCH HÀNG
         private void btnThemKH_Click(object sender, EventArgs e)
         {
@@ -212,6 +222,7 @@ namespace RetailStore
             {
                 lblHD.Text = ""; 
                 string idKH = row.Cells[0].Value.ToString();
+                lblName.Text = row.Cells[1].Value.ToString();
                 dgvLichSuGD.DataSource = BLL_HoaDon.Instance.GetListHD_BLL(idKH);
                 dgvLichSuGD.Columns[2].Visible = false;
             }
@@ -228,5 +239,6 @@ namespace RetailStore
                 dgvLichSuGD.DataSource = BLL_HoaDonCT.Instance.GetListHDCT_BLL(idHD);
             }
         }
+        #endregion
     }
 }

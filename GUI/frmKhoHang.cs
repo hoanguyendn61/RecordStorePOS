@@ -24,6 +24,7 @@ namespace RetailStore
             LoadData();
             DisableControls();
         }
+        #region method
         private void LoadData()
         {
             cmbSapxep.SelectedItem = "Mặc định";
@@ -183,6 +184,7 @@ namespace RetailStore
                     break;
             }
         }
+        #endregion
         #region events
         // Clear toàn bộ textbox, numericupdown... Thêm Hàng hóa
         private void btnThemHH_Click(object sender, EventArgs e)

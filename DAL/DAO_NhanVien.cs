@@ -58,13 +58,18 @@ namespace RetailStore.DAL
             kq = DataProvider.Instance.ExecuteNonQuery(query, new object[] { nv.Tên, nv.Địa_chỉ, nv.SĐT, nv.CMND, nv.Lương_NV, date, nv.Mã_NViên, dn.Loại_tài_khoản.ToString(), dn.Tên_tài_khoản});
             return kq > 0;
         }
-        public bool DeleteEmployee_DAL(string maNV)
+        public bool DeleteEmployee_DAL(string tkNV)
         {
-            string query = "alter table dbo.HOADON nocheck constraint ALL " +
-                        "DELETE FROM dbo.NHANVIEN WHERE MaNV = '" + maNV + "'" +
-                        "alter table dbo.HOADON check constraint ALL";
+            string query = " DELETE dbo.NHANVIEN WHERE TaiKhoan = '" + tkNV + "' " +
+                         "DELETE dbo.DANGNHAP WHERE TaiKhoan = '" + tkNV + "' "; 
             int kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
+        }
+        public string FindEmployeeMaxKey_DAL()
+        {
+            string query = "SELECT MAX(MaNV) FROM dbo.NHANVIEN";
+            object kq = DataProvider.Instance.ExecuteScalar(query);
+            return (string)kq;
         }
         public bool ResetEmployeePassword_DAL(string taiK)
         {

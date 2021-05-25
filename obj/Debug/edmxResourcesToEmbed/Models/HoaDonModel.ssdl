@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RetroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Retro.dbo.HoaDonView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HoaDonView">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="TenHH" />
+      <PropertyRef Name="QtyHD" />
+      <PropertyRef Name="DonGiaHH" />
+      <PropertyRef Name="ThanhTien" />
+      <PropertyRef Name="NgayGD" />
+      <PropertyRef Name="TenKH" />
+    </Key>
+    <Property Name="MaHD" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TenHH" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="QtyHD" Type="int" Nullable="false" />
+    <Property Name="DonGiaHH" Type="float" Nullable="false" />
+    <Property Name="ThanhTien" Type="float" Nullable="false" />
+    <Property Name="SalesDc" Type="int" />
+    <Property Name="NgayGD" Type="datetime" Nullable="false" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="RetroModelStoreContainer">
+    <EntitySet Name="HoaDonView" EntityType="Self.HoaDonView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HoaDonView].[MaHD] AS [MaHD], 
+    [HoaDonView].[TenHH] AS [TenHH], 
+    [HoaDonView].[QtyHD] AS [QtyHD], 
+    [HoaDonView].[DonGiaHH] AS [DonGiaHH], 
+    [HoaDonView].[ThanhTien] AS [ThanhTien], 
+    [HoaDonView].[SalesDc] AS [SalesDc], 
+    [HoaDonView].[NgayGD] AS [NgayGD], 
+    [HoaDonView].[TenNV] AS [TenNV], 
+    [HoaDonView].[TenKH] AS [TenKH]
+    FROM [dbo].[HoaDonView] AS [HoaDonView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

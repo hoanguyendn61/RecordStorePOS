@@ -62,16 +62,17 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.lblMNV = new System.Windows.Forms.Label();
             this.pnlQLNV = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbSapxepNV = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTimNV = new System.Windows.Forms.TextBox();
-            this.lblTimkiem = new System.Windows.Forms.Label();
             this.dtgvNhanvien = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.grpbNhapKH.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmLuongNV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlQLNV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanvien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -455,16 +456,26 @@
             this.pnlQLNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlQLNV.Controls.Add(this.pictureBox1);
             this.pnlQLNV.Controls.Add(this.cmbSapxepNV);
             this.pnlQLNV.Controls.Add(this.label6);
             this.pnlQLNV.Controls.Add(this.txtTimNV);
-            this.pnlQLNV.Controls.Add(this.lblTimkiem);
             this.pnlQLNV.Controls.Add(this.dtgvNhanvien);
             this.pnlQLNV.Controls.Add(this.label1);
             this.pnlQLNV.Location = new System.Drawing.Point(0, 331);
             this.pnlQLNV.Name = "pnlQLNV";
             this.pnlQLNV.Size = new System.Drawing.Size(1373, 427);
             this.pnlQLNV.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(518, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
             // cmbSapxepNV
             // 
@@ -477,7 +488,7 @@
             "Tên, Z->A",
             "Ngày, MỚI ĐẾN CŨ",
             "Ngày, CŨ ĐẾN MỚI"});
-            this.cmbSapxepNV.Location = new System.Drawing.Point(1117, 11);
+            this.cmbSapxepNV.Location = new System.Drawing.Point(1107, 9);
             this.cmbSapxepNV.Name = "cmbSapxepNV";
             this.cmbSapxepNV.Size = new System.Drawing.Size(198, 35);
             this.cmbSapxepNV.TabIndex = 20;
@@ -488,7 +499,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Josefin Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(999, 11);
+            this.label6.Location = new System.Drawing.Point(989, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 38);
             this.label6.TabIndex = 9;
@@ -497,22 +508,11 @@
             // txtTimNV
             // 
             this.txtTimNV.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimNV.Location = new System.Drawing.Point(622, 13);
+            this.txtTimNV.Location = new System.Drawing.Point(570, 11);
             this.txtTimNV.Name = "txtTimNV";
             this.txtTimNV.Size = new System.Drawing.Size(358, 33);
             this.txtTimNV.TabIndex = 19;
             this.txtTimNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimNV_KeyPress);
-            // 
-            // lblTimkiem
-            // 
-            this.lblTimkiem.AutoSize = true;
-            this.lblTimkiem.Font = new System.Drawing.Font("Josefin Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimkiem.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTimkiem.Location = new System.Drawing.Point(488, 11);
-            this.lblTimkiem.Name = "lblTimkiem";
-            this.lblTimkiem.Size = new System.Drawing.Size(128, 38);
-            this.lblTimkiem.TabIndex = 7;
-            this.lblTimkiem.Text = "Tìm kiếm: ";
             // 
             // dtgvNhanvien
             // 
@@ -537,6 +537,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = "0";
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -581,6 +582,7 @@
             this.groupBox1.PerformLayout();
             this.pnlQLNV.ResumeLayout(false);
             this.pnlQLNV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanvien)).EndInit();
             this.ResumeLayout(false);
 
@@ -615,7 +617,6 @@
         private System.Windows.Forms.ComboBox cmbSapxepNV;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTimNV;
-        private System.Windows.Forms.Label lblTimkiem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rBNV;
         private System.Windows.Forms.RadioButton rBQL;
@@ -625,5 +626,6 @@
         private System.Windows.Forms.NumericUpDown nmLuongNV;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpNgayBD;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -55,13 +55,10 @@ namespace RetailStore.DAL
         }
         public bool DeleteSupplier_DAL(string idSup)
         {
-            string query = string.Format("alter table dbo.HANGHOA nocheck constraint ALL " +
-                                         "Delete FROM dbo.NHACUNGCAP WHERE MaNCC = '{0}'" +
-                                         "alter table dbo.HANGHOA check constraint ALL ", idSup);
+            string query = string.Format("Delete FROM dbo.NHACUNGCAP WHERE MaNCC = '{0}'", idSup);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        
         public NhaCungCap GetSupplierByID_DAL(string id)
         {
             string query = "SELECT * FROM NHACUNGCAP WHERE MaNCC = '" + id + "'";

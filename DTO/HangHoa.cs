@@ -32,7 +32,7 @@ namespace RetailStore.DTO
             this.Loại = (string)row["LoaiHH"];
             this.SL = (int)Convert.ToDouble(row["QtyHH"].ToString());
             this.Giá_vốn = (float)Convert.ToDouble(row["GiaVonHH"].ToString());
-            this.Đơn_giá = (float)Convert.ToDouble(row["DonGiaHH"].ToString());
+            this.Đơn_giá = (float)Convert.ToDouble(row["DonGiaHH"].ToString()); 
             this.Nhà_cung_cấp = (string)row["TenNCC"];
             this.Cập_nhật = (DateTime)row["UpdateAt"];
             this.Ghi_chú = (string)row["GhiChuHH"];

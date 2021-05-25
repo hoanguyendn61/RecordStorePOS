@@ -45,12 +45,11 @@ namespace RetailStore.DAL
             return list;
         }
         // Get list HĐ between dates, employee, customer
-        string formatFrom = "yyyy-MM-dd 00:00:00.000";
-        string formatTo = "yyyy-MM-dd 23:59:59.000";
-        public List<HoaDon> GetListHD_DAL(DateTime from, DateTime to)
+
+        public List<HoaDon> GetListHD_DAL(string from, string to)
         {
             List<HoaDon> list = new List<HoaDon>();
-            string query = "EXEC dbo.PROC_GetListHDByDates @date1 = '"+from.ToString(formatFrom) +"', @date2 = '"+to.ToString(formatTo) +"' ";
+            string query = "EXEC dbo.PROC_GetListHDByDates @date1 = '"+ from +"', @date2 = '"+ to +"' ";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -71,8 +70,6 @@ namespace RetailStore.DAL
         public DataTable PrintHoaDon_DAL(string maHD)
         {
             string query = "SELECT * FROM dbo.HoaDonView WHERE MaHD = '" +maHD+ "'";
-            HoaDonReport hoaDonIn = new HoaDonReport();
-            hoaDonIn.DataSource = DataProvider.Instance.ExecuteQuery(query);
             return DataProvider.Instance.ExecuteQuery(query);
         }
         public bool DeleteHD_DAL(string maHD )
@@ -81,13 +78,6 @@ namespace RetailStore.DAL
             int kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
-        public double TongTienTheoNgay_DAL()
-        {
-            return Convert.ToDouble(DataProvider.Instance.ExecuteScalar("EXEC DoanhThuToday"));
-        }
-        public int TongSoHoaDon_DAL()
-        {
-            return Convert.ToInt32(DataProvider.Instance.ExecuteScalar("SELECT COUNT(*) MaHD FROM dbo.HOADON"));
-        }
+
     }
 }

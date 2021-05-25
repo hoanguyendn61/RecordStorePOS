@@ -47,9 +47,15 @@ namespace RetailStore.BLL
         {
             if (tentk != "admin" && tentk != frmDangnhap.nv.Tên_tài_khoản)
             {
-                return BLL_DangNhap.Instance.DeleteAccount_BLL(tentk);
+                if (DAO_NhanVien.Instance.DeleteEmployee_DAL(tentk))
+                {
+                    return true;
+                } else
+                {
+                    return BLL_DangNhap.Instance.DeleteAccount_BLL(tentk);
+                }
             } 
-            else 
+            else
             {
                 return false;
             }
@@ -67,15 +73,7 @@ namespace RetailStore.BLL
         }
         public string FindEmployeeMaxKey_BLL()
         {
-            string maNVmax = "NV000";
-            foreach (NhanVien i in GetListEmployees_BLL())
-            {
-                if (String.Compare(maNVmax, i.Mã_NViên) < 0)
-                {
-                    maNVmax = i.Mã_NViên;
-                }
-            }
-            return maNVmax;
+            return DAO_NhanVien.Instance.FindEmployeeMaxKey_DAL();
         }
         public bool ResetEmployeePassword_BLL(string tkNV)
         {

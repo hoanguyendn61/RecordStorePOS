@@ -20,7 +20,7 @@ namespace RetailStore
         {
             InitializeComponent();
             hdon = hd;
-            txtTong.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0}", hdon.Tổng_cộng);
+            txtTong.Text = String.Format("{0:#,##0}", hdon.Tổng_cộng);
             nmKhachdua.Select();
         }
         double Tralai;
@@ -28,7 +28,7 @@ namespace RetailStore
         {
             double TongC = hdon.Tổng_cộng;
             Tralai = Convert.ToDouble(nmKhachdua.Value) - TongC;
-            txtTralai.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0}", Tralai);
+            txtTralai.Text = String.Format("{0:#,##0}", Tralai);
         }
         private void nmKhachdua_ValueChanged(object sender, EventArgs e)
         {
@@ -42,7 +42,7 @@ namespace RetailStore
         {
             if (Tralai >= 0)
             {
-                HoaDonReport hoaDonIn = new HoaDonReport(nmKhachdua.Value.ToString(), txtTralai.Text);
+                HoaDonReport hoaDonIn = new HoaDonReport(Convert.ToDouble(nmKhachdua.Value));
                 hoaDonIn.DataSource = BLL_HoaDon.Instance.PrintHoaDon_BLL(hdon.Mã_HĐơn);
                 hoaDonIn.ShowPreviewDialog();
                 this.Dispose();

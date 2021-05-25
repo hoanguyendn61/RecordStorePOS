@@ -13,13 +13,20 @@ namespace RetailStore.GUI
 {
     public partial class frmLichSuBH : Form
     {
+        public delegate void MydelBH();
+        public MydelBH dHH { get; set; }
         public frmLichSuBH()
         {
             InitializeComponent();
             LoadDataIntoCB(cbKH);
             LoadDataIntoCB(cbNV);
+            LoadDSHoaDon();
         }
-
+        string maHD = "";
+        DateTime from = new DateTime();
+        DateTime to = new DateTime();
+        string idNV = "";
+        string idKH = ""; 
         private void LoadDataIntoCB(ComboBox cmb)
         {
             cmb.Items.Add(new CBBItem { ID = "XX", Text = "Tất cả" });
@@ -53,10 +60,11 @@ namespace RetailStore.GUI
         private void LoadDSHoaDon()
         {
             lblMaHD.Text = "";
-            DateTime from = dtpFrom.Value;
-            DateTime to = dtpTo.Value;
-            string idNV = (cbNV.SelectedItem as CBBItem).ID;
-            string idKH = (cbKH.SelectedItem as CBBItem).ID;
+            maHD = "";
+            from = dtpFrom.Value;
+            to = dtpTo.Value;
+            idNV = (cbNV.SelectedItem as CBBItem).ID;
+            idKH = (cbKH.SelectedItem as CBBItem).ID;
             if (idNV == "XX" && idKH == "XX")
             {
                 // All nhân viên + khách hàng
@@ -66,14 +74,11 @@ namespace RetailStore.GUI
             {
                 dgvLichSuBH.DataSource = BLL_HoaDon.Instance.GetListHD_BLL(from, to, idNV, idKH);
             }
-            if (dgvLichSuBH.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
         private void btnXem_Click(object sender, EventArgs e)
         {
             LoadDSHoaDon();
+            txtTimHD.Clear();
         }
         // Xem hóa đơn chi tiết ứng với mã hóa đơn
         private void btnCTHD_Click(object sender, EventArgs e)
@@ -82,31 +87,62 @@ namespace RetailStore.GUI
             DataGridViewRow row = dgvLichSuBH.Rows[index];
             if (row != null)
             {
-                string idHD = row.Cells[0].Value.ToString();
-                lblMaHD.Text = idHD;
-                dgvLichSuBH.DataSource = BLL_HoaDonCT.Instance.GetListHDCT_BLL(idHD);
+                maHD = row.Cells[0].Value.ToString();
+                lblMaHD.Text = maHD;
+                dgvLichSuBH.DataSource = BLL_HoaDonCT.Instance.GetListHDCT_BLL(maHD);
             }
         }
         // Hủy bỏ hóa đơn ứng với mã hóa đơn
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
+            if(maHD != "")
+            {
+                DialogResult q = MessageBox.Show("Xác nhận hủy bỏ hóa đơn " + maHD, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (q == DialogResult.Yes)
+                {
+                    if (BLL_HoaDon.Instance.DeleteHD_BLL(maHD))
+                    {
+                        MessageBox.Show("Hủy bỏ hóa đơn " + maHD + " thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dHH();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hủy bỏ hóa đơn " + maHD + " không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    LoadDSHoaDon();
+                }
+            }
+        }
+        // Bấm enter để tìm hóa đơn
+        private void txtTimHD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals((char)13))
+            {
+                if (txtTimHD.Text != "")
+                {
+                    dgvLichSuBH.DataSource = BLL_HoaDon.Instance.GetHDByMaHD(txtTimHD.Text, from, to, idNV, idKH);
+                    if (dgvLichSuBH.Rows.Count < 1)
+                    {
+                        MessageBox.Show("Tìm kiếm của bạn không có kết quả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadDSHoaDon();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Chưa nhập dữ liệu vào ô tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                e.Handled = true;
+            }
+        }
+
+        private void dgvLichSuBH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             int index = dgvLichSuBH.SelectedCells[0].RowIndex;
             DataGridViewRow row = dgvLichSuBH.Rows[index];
             if (row != null)
             {
-                string idHD = row.Cells[0].Value.ToString();
-                DialogResult q = MessageBox.Show("Xác nhận hủy bỏ hóa đơn " + idHD, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (q == DialogResult.Yes)
-                {
-                    if (BLL_HoaDon.Instance.DeleteHD_BLL(idHD))
-                    {
-                        MessageBox.Show("Hủy bỏ hóa đơn " + idHD + " thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    } else
-                    {
-                        MessageBox.Show("Hủy bỏ hóa đơn " + idHD + " không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    LoadDSHoaDon();
-                }
+                maHD = row.Cells[0].Value.ToString();
+                lblMaHD.Text = maHD;
             }
         }
     }

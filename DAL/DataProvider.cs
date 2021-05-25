@@ -47,7 +47,7 @@ namespace RetailStore.DAL
             
             return data;
             }
-        // INSERT, UPDATE, 
+        // INSERT, UPDATE, DELETE
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;

@@ -36,7 +36,6 @@ namespace RetailStore.GUI
             this.cbSapxepNCC = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTimNCC = new System.Windows.Forms.TextBox();
-            this.lblTimkiem = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dGVSupplier = new System.Windows.Forms.DataGridView();
             this.grpbNhapKH = new System.Windows.Forms.GroupBox();
@@ -55,9 +54,11 @@ namespace RetailStore.GUI
             this.lblTenKH = new System.Windows.Forms.Label();
             this.txtMaNCC = new System.Windows.Forms.TextBox();
             this.lblMKH = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVSupplier)).BeginInit();
             this.grpbNhapKH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,10 +66,10 @@ namespace RetailStore.GUI
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.cbSapxepNCC);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtTimNCC);
-            this.panel1.Controls.Add(this.lblTimkiem);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dGVSupplier);
             this.panel1.Location = new System.Drawing.Point(3, 316);
@@ -110,17 +111,6 @@ namespace RetailStore.GUI
             this.txtTimNCC.Size = new System.Drawing.Size(358, 33);
             this.txtTimNCC.TabIndex = 11;
             this.txtTimNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimNCC_KeyPress);
-            // 
-            // lblTimkiem
-            // 
-            this.lblTimkiem.AutoSize = true;
-            this.lblTimkiem.Font = new System.Drawing.Font("Josefin Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimkiem.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTimkiem.Location = new System.Drawing.Point(436, 9);
-            this.lblTimkiem.Name = "lblTimkiem";
-            this.lblTimkiem.Size = new System.Drawing.Size(128, 38);
-            this.lblTimkiem.TabIndex = 32;
-            this.lblTimkiem.Text = "Tìm kiếm: ";
             // 
             // label1
             // 
@@ -373,6 +363,16 @@ namespace RetailStore.GUI
             this.lblMKH.TabIndex = 0;
             this.lblMKH.Text = "Mã nhà cung cấp:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(518, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,6 +389,7 @@ namespace RetailStore.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dGVSupplier)).EndInit();
             this.grpbNhapKH.ResumeLayout(false);
             this.grpbNhapKH.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,8 +416,8 @@ namespace RetailStore.GUI
         private System.Windows.Forms.TextBox txtDcNCC;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTimNCC;
-        private System.Windows.Forms.Label lblTimkiem;
         private System.Windows.Forms.ComboBox cbSapxepNCC;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

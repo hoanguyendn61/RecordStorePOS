@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Download\Study\HOC\YEAR 2\PBL2\RetailStore\RetailStoreModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\Models\HoaDonModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

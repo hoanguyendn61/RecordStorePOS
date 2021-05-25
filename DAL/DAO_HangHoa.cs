@@ -77,9 +77,7 @@ namespace RetailStore.DAL
         }
         public bool DeleteProduct_DAL(string idProduct)
         {
-            string query = string.Format("alter table dbo.CHITIETHOADON nocheck constraint ALL " +
-                                         "Delete FROM dbo.HANGHOA WHERE MaHH = '{0}'" +
-                                         "alter table dbo.CHITIETHOADON check constraint ALL ", idProduct);
+            string query = string.Format("Delete FROM dbo.HANGHOA WHERE MaHH = '{0}'", idProduct);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
@@ -88,9 +86,6 @@ namespace RetailStore.DAL
             string query = "EXEC dbo.GetProduct @maHH = '" + id + "'";
             return new HangHoa(DataProvider.Instance.ExecuteQuery(query).Rows[0]);
         }
-        //public int TongSLSanPham()
-        //{
-        //    return Convert.ToInt32(DataProvider.Instance.ExecuteScalar("SELECT SUM(QtyHH) FROM dbo.HANGHOA"));
-        //}
+        
     }
 }

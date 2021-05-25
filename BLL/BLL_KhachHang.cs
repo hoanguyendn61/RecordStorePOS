@@ -80,5 +80,9 @@ namespace RetailStore.BLL
             LKH.Sort(new Comparison<KhachHang>(cmp));
             return LKH;
         }
+        public int SLKhachHang_BLL()
+        {
+             return GetListCustomers_BLL().Count - 1;
+        }
     }
 }

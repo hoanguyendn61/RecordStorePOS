@@ -115,5 +115,14 @@ namespace RetailStore.BLL
             LHH.Sort(new Comparison<HangHoa>(cmp));
             return LHH;
         }
+        public int TongSLTonKho_BLL()
+        {
+            int S = 0;
+            foreach(HangHoa i in GetListProducts_BLL())
+            {
+                S += i.SL;
+            }
+            return S;
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace RetailStore
             InitializeComponent();
             LoadData();
         }
+        #region method
         private void LoadData()
         {
             dtgvNhanvien.DataSource = dsnv;
@@ -39,7 +40,7 @@ namespace RetailStore
             List<string> l = new List<string>();
             foreach (DataGridViewRow i in dtgvNhanvien.Rows)
             {
-                l.Add(i.Cells[6].Value.ToString());
+                l.Add(i.Cells[7].Value.ToString());
             }
             return l;
         }
@@ -160,6 +161,8 @@ namespace RetailStore
             dtgvNhanvien.CurrentCell = dtgvNhanvien.Rows[0].Cells[0];
             GetRowValue();
         }
+        #endregion
+        #region events
         // THÊM NHÂN VIÊN
         private void btnThemNV_Click(object sender, EventArgs e)
         {
@@ -202,6 +205,8 @@ namespace RetailStore
                         if (BLL_NhanVien.Instance.InsertEmployee_BLL(nv, dn))
                         {
                             MessageBox.Show("Thêm nhân viên " + nv.Tên + " thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadDSNhanVien();
+                            OutInsertorUpdate();
                         }
                         else
                         {
@@ -226,6 +231,8 @@ namespace RetailStore
                     if (BLL_NhanVien.Instance.UpdateEmployee_BLL(nv, dn))
                     {
                         MessageBox.Show("Cập nhật nhân viên " + nv.Tên + " thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadDSNhanVien();
+                        OutInsertorUpdate();
                     }
                     else
                     {
@@ -237,8 +244,6 @@ namespace RetailStore
                     MessageBox.Show("Nhập thiếu dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            LoadDSNhanVien();
-            OutInsertorUpdate();
         }
         // CẬP NHẬT NHÂN VIÊN
         private void btnCapnhatNV_Click(object sender, EventArgs e)
@@ -334,10 +339,10 @@ namespace RetailStore
             frmGioCong f = new frmGioCong();
             f.ShowDialog();
         }
-
         private void txtTenTK_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
+        #endregion
     }
 }

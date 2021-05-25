@@ -145,7 +145,6 @@
             this.nmKhachdua.Size = new System.Drawing.Size(279, 34);
             this.nmKhachdua.TabIndex = 10;
             this.nmKhachdua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nmKhachdua.ThousandsSeparator = true;
             this.nmKhachdua.ValueChanged += new System.EventHandler(this.nmKhachdua_ValueChanged);
             this.nmKhachdua.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nmKhachdua_KeyUp);
             // 

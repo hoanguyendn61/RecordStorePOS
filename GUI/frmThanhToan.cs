@@ -18,16 +18,21 @@ namespace RetailStore
     public partial class frmThanhtoan : Form
     {
 
-        public frmThanhtoan(string name)
+        public frmThanhtoan()
         {
             InitializeComponent();
-            LoadData(name);
+            LoadData();
         }
 
         #region method
-        void LoadData(string tenNV)
+        private void LoadData()
         {
-           LoadListProductsTT();
+            // no one but the manager can see the sales history
+            if (frmDangnhap.nv.Loại_tài_khoản != true)
+            {
+                btnHistory.Enabled = false;
+            }
+            LoadListProductsTT();
             LayDSKH();
             txtNgayGD.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             // Hide Column Mã_Hàng
@@ -36,27 +41,26 @@ namespace RetailStore
             dtgvTTHang.Columns[4].Visible = false;
             // Hide Column Nhà_Cung_Cấp
             dtgvTTHang.Columns[8].Visible = false;
-            lblCashier.Text = tenNV;
+            lblCashier.Text = frmDangnhap.nv.Tên;
+
             TangKeyValueHD();
-            btnXoaSP.Enabled = false;
-            btnSuaSP.Enabled = false;
-            btnTT.Enabled = false;
             cmbSapxep.SelectedItem = "Mặc định";
             TinhTien();
         }
-        void LayDSKH()
+        private void LayDSKH()
         {
             cmbTenKH.DataSource = BLL_KhachHang.Instance.GetListCustomers_BLL();
             cmbTenKH.DisplayMember = "Tên";
         }
-        void LoadListProductsTT()
+        private void LoadListProductsTT()
         {
             dtgvTTHang.DataSource = BLL_HangHoa.Instance.GetListProducts_BLL();
         }
-        void LoadListProductsTT(string catName)
+        private void LoadListProductsTT(string catName)
         {
             dtgvTTHang.DataSource = BLL_HangHoa.Instance.GetListProducts_BLL(catName);
         }
+
         private List<string> GetListID_GUI()
         {
             List<string> LMHH = new List<string>();
@@ -94,76 +98,122 @@ namespace RetailStore
                 total += double.Parse(item.SubItems[4].Text, System.Globalization.NumberStyles.Currency);
             }
             TOTAL = total - (total * giamGia / 100);
-            txtTienH.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0}", total);
-            txtTongC.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0}", TOTAL);
+            //txtTienH.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0}", total);
+            txtTienH.Text = String.Format("{0:#,##0}", total);
+            //txtTongC.Text = String.Format(new CultureInfo("vi-VN"), "{0:#,##0}", TOTAL);
+            txtTongC.Text = String.Format("{0:#,##0}", TOTAL);
+        }
+        ListViewItem slvi = null;
+        // Hàm kiểm tra item đã chọn trong datagridview tồn tại trong listviewitem hay không
+        private Boolean CheckItemExistsInLVI(int _sl = 1)
+        {
+            string maHang = "";
+            int id = 0;
+            ListViewItem item = null;
+            Boolean itemExists = false;
+            if (dtgvTTHang.SelectedRows.Count > 0 || lsvHHThanhToan.SelectedItems.Count > 0)
+            {
+                try
+                {
+                    id = dtgvTTHang.SelectedRows[0].Index;
+                    maHang = dtgvTTHang.Rows[id].Cells[0].Value.ToString();
+                    item = lsvHHThanhToan.FindItemWithText(maHang);
+                    if (item != null)
+                    {
+                        this.lsvHHThanhToan.Items[item.Index].Selected = true;
+                        // Nếu tồn tại item trong danh sách HĐ -> itemExists = true
+                        itemExists = true;
+                        slvi = lsvHHThanhToan.SelectedItems[0];
+                    } else
+                    {
+                        // Nếu chưa -> khởi tạo slvi với mã hàng của item đã chọn
+                        slvi = new ListViewItem(maHang);
+                        string tenHH = dtgvTTHang.Rows[id].Cells[1].Value.ToString();
+                        string donGia = String.Format("{0:#,##0}", dtgvTTHang.Rows[id].Cells[5].Value);
+                        slvi.SubItems.AddRange(new[] { tenHH, _sl.ToString(), donGia, donGia });
+                    }
+                }
+                catch (Exception)
+                {
+                    itemExists = true;
+                    slvi = lsvHHThanhToan.SelectedItems[0];
+                }
+            }
+            return itemExists;
         }
         // Thêm item vào danh sách hóa đơn
         private void ThemSP()
         {
-            int id = dtgvTTHang.SelectedRows[0].Index;
-            string maHang = dtgvTTHang.Rows[id].Cells[0].Value.ToString();
-            int slH = Convert.ToInt32(dtgvTTHang.Rows[id].Cells[3].Value.ToString());
-            if (slH == 0)
+            if(dtgvTTHang.SelectedRows.Count > 0 || lsvHHThanhToan.SelectedItems.Count > 0)
             {
-                MessageBox.Show("Sản phẩm đã hết", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                // Tìm xem SP đã có trong danh sách thanh toán = cách tìm theo mã hàng
-                ListViewItem item = lsvHHThanhToan.FindItemWithText(maHang);
-                double thanhTien;
-                // Nếu Sản phẩm chưa có trong DS THANH TOÁN -> Tạo mới listviewitem
-                if (item == null)
+                if (!CheckItemExistsInLVI())
                 {
-                    string tenHH = dtgvTTHang.Rows[id].Cells[1].Value.ToString();
-                    string donGia = dtgvTTHang.Rows[id].Cells[5].Value.ToString();
-                    ListViewItem lvi = new ListViewItem(maHang);
-                    lvi.SubItems.Add(tenHH); // Cột tên Sản Phẩm
-                    lvi.SubItems.Add("1"); // Cột SL Sản Phẩm
-                    lvi.SubItems.Add(donGia); // Cột đơn giá Sản Phẩm
-                    lvi.SubItems.Add(donGia); // Cột thành tiền Sản Phẩm
-                    lsvHHThanhToan.Items.Add(lvi);
-                    this.lsvHHThanhToan.Items[0].Selected = true;
-                } // Nếu SP đã tồn tại -> cộng SL của Sản phẩm tương ứng lên 1 đơn vị
+                    lsvHHThanhToan.Items.Add(slvi);
+                }
                 else
                 {
-                    this.lsvHHThanhToan.Items[item.Index].Selected = true;
-                    ListViewItem lvi = lsvHHThanhToan.SelectedItems[0];
-                    int sl;
-                    sl = Convert.ToInt32(lvi.SubItems[2].Text) + 1;
-                    thanhTien = (double)Convert.ToDouble(lvi.SubItems[3].Text) * (double)Convert.ToDouble(sl);
-                    if (sl <= slH)
+                    int slMax = BLL_HangHoa.Instance.GetProductQuanityByID_BLL(slvi.SubItems[0].Text);
+                    int sl = Convert.ToInt32(slvi.SubItems[2].Text) + 1;
+                    double thanhTien = Convert.ToDouble(slvi.SubItems[3].Text) * Convert.ToDouble(sl);
+                    if (sl <= slMax)
                     {
-                        lvi.SubItems[2].Text = sl.ToString();
-                        lvi.SubItems[4].Text = thanhTien.ToString();
+                        slvi.SubItems[2].Text = sl.ToString();
+                        slvi.SubItems[4].Text = String.Format("{0:#,##0}", thanhTien);
                     }
                     else
                     {
                         MessageBox.Show("Nhập quá số lượng còn lại của sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                btnTT.Enabled = true;
+                TinhTien();
             }
-            TinhTien();
+        }
+        // Giảm số lượng item trong danh sách hóa đơn
+        private void GiamSP()
+        {
+            if (CheckItemExistsInLVI())
+            {
+                int sl = Convert.ToInt32(slvi.SubItems[2].Text) - 1;
+                if (sl == 0)
+                {
+                    XoaSP();
+                }
+                else
+                {
+                    double thanhTien = sl * Convert.ToDouble(slvi.SubItems[3].Text);
+                    slvi.SubItems[2].Text = sl.ToString();
+                    slvi.SubItems[4].Text = String.Format("{0:#,##0}", thanhTien);
+                }
+                TinhTien();
+            }
+        }
+        // Mở from Nhập SL sản phẩm
+        private void NhapSLSP()
+        {
+            if(dtgvTTHang.SelectedRows.Count > 0 || lsvHHThanhToan.SelectedItems.Count > 0)
+            {
+                CheckItemExistsInLVI();
+                frmThemVaoHD f = new frmThemVaoHD(slvi);
+                f.dTT = new frmThemVaoHD.MyDelTinhTien(TinhTien);
+                f.ShowDialog();
+                
+                if (!CheckItemExistsInLVI(Convert.ToInt32(slvi.SubItems[2].Text)))
+                {
+                    lsvHHThanhToan.Items.Add(slvi);
+                }
+            }
         }
         // Xóa item ra khỏi danh sách hóa đơn
         private void XoaSP()
         {
-            if (lsvHHThanhToan.SelectedItems.Count > 0)
+            if (CheckItemExistsInLVI())
             {
                 if (MessageBox.Show("Xác nhận xóa sản phẩm khỏi danh sách mua hàng", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     lsvHHThanhToan.Items.RemoveAt(lsvHHThanhToan.SelectedItems[0].Index);
                 }
+                TinhTien();
             }
-            if (lsvHHThanhToan.Items.Count == 0)
-            {
-                btnTT.Enabled = false;
-                btnThemSP.Enabled = true;
-            }
-            TinhTien();
-            btnXoaSP.Enabled = false;
-            btnSuaSP.Enabled = false;
         }
         #endregion
         #region events
@@ -239,37 +289,27 @@ namespace RetailStore
         {
             ThemSP();
         }
-        private void dtgvTTHang_CellLeave(object sender, DataGridViewCellEventArgs e)
+        // Button giảm số lượng item trong danh sách hóa đơn
+        private void btnGiam_Click(object sender, EventArgs e)
         {
-            btnThemSP.Enabled = true;
+            GiamSP();
         }
         // Button xóa item khỏi danh sách hóa đơn
         private void btnXoaSP_Click(object sender, EventArgs e)
         {
             XoaSP();
         }
-
-        private void dtgvTTHang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnXoaSP.Enabled = false;
-            btnSuaSP.Enabled = false;
-        }
         // button mở form Nhập SL sản phẩm
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
-            if (lsvHHThanhToan.SelectedItems.Count > 0)
-            {
-                ListViewItem lvi = lsvHHThanhToan.SelectedItems[0];
-                frmThemVaoHD f = new frmThemVaoHD(lvi);
-                f.dTT = new frmThemVaoHD.MyDelTinhTien(TinhTien);
-                f.ShowDialog();
-            }
+            NhapSLSP();
         }
         private void lsvHHThanhToan_MouseClick(object sender, MouseEventArgs e)
         {
-            btnThemSP.Enabled = false;
+            //btnThemSP.Enabled = false;
             btnXoaSP.Enabled = true;
             btnSuaSP.Enabled = true;
+            dtgvTTHang.ClearSelection();
         }
         private void nmDiscount_ValueChanged(object sender, EventArgs e)
         {
@@ -278,81 +318,88 @@ namespace RetailStore
         // Button thanh toán hóa đơn
         private void btnTT_Click(object sender, EventArgs e)
         {
-            string maHD = txtMaHD.Text;
-            string maKH = (cmbTenKH.SelectedItem as KhachHang).Mã_KHàng;
-            DateTime ngayGD = DateTime.Now;
-            string maNV = frmDangnhap.nv.Mã_NViên;
-            int giamGia = (int)Convert.ToInt32(nmDiscount.Value);
-            HoaDon hoadon = new HoaDon(maHD, ngayGD, maNV, maKH, TOTAL);
-            if (BLL_HoaDon.Instance.InsertHoaDon_BLL(hoadon))
+            if(lsvHHThanhToan.Items.Count > 0)
             {
-                for (int i = 0; i < lsvHHThanhToan.Items.Count; i++)
+                string maHD = txtMaHD.Text;
+                string maKH = (cmbTenKH.SelectedItem as KhachHang).Mã_KHàng;
+                DateTime ngayGD = DateTime.Now;
+                string maNV = frmDangnhap.nv.Mã_NViên;
+                int giamGia = Convert.ToInt32(nmDiscount.Value);
+                HoaDon hoadon = new HoaDon(maHD, ngayGD, maNV, maKH, TOTAL);
+                if (BLL_HoaDon.Instance.InsertHoaDon_BLL(hoadon))
                 {
-                    string maHH = lsvHHThanhToan.Items[i].SubItems[0].Text;
-                    int slHH = (int)Convert.ToInt32(lsvHHThanhToan.Items[i].SubItems[2].Text);
-                    HoaDonCT hoaDonCT = new HoaDonCT(hoadon, maHH, giamGia, slHH);
-                    BLL_HoaDonCT.Instance.InsertHoaDonCT_BLL(hoaDonCT);
+                    for (int i = 0; i < lsvHHThanhToan.Items.Count; i++)
+                    {
+                        string maHH = lsvHHThanhToan.Items[i].SubItems[0].Text;
+                        int slHH = Convert.ToInt32(lsvHHThanhToan.Items[i].SubItems[2].Text);
+                        HoaDonCT hoaDonCT = new HoaDonCT(hoadon, maHH, giamGia, slHH);
+                        BLL_HoaDonCT.Instance.InsertHoaDonCT_BLL(hoaDonCT);
+                    }
+                    lsvHHThanhToan.Items.Clear();
+                    frmTinhtien f = new frmTinhtien(hoadon);
+                    f.ShowDialog();
+                    LoadListProductsTT();
+                    TangKeyValueHD();
+                    TinhTien();
                 }
-                lsvHHThanhToan.Items.Clear();
-                LoadListProductsTT();
-                frmTinhtien f = new frmTinhtien(hoadon);
-                f.ShowDialog();
-                TangKeyValueHD();
-                TinhTien();
-            }
-            else
+                else
+                {
+                    MessageBox.Show("Lỗi khi thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } else
             {
-                MessageBox.Show("Lỗi khi thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Danh sách mua hàng trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            btnTT.Enabled = false;
         }
         // Tạo chức năng các phím tắt cho danh sách hóa đơn
         private void lsvHHThanhToan_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
-            {
-                XoaSP();
-            }
-            int sl;
-            double thanhTien;
-            ListViewItem lvi;
-            if (lsvHHThanhToan.Items.Count > 0)
+            
+            if (lsvHHThanhToan.SelectedItems.Count > 0)
             {
                 if (e.KeyCode == Keys.Subtract)
                 {
-                    lvi = lsvHHThanhToan.SelectedItems[0];
-                    sl = (int)Convert.ToDouble(lvi.SubItems[2].Text) - 1;
-                    if (sl == 0)
-                    {
-                        XoaSP();
-                    }
-                    else
-                    {
-                        thanhTien = sl * (double)Convert.ToDouble(lvi.SubItems[3].Text);
-                        lvi.SubItems[2].Text = sl.ToString();
-                        lvi.SubItems[4].Text = thanhTien.ToString();
-                    }
+                    GiamSP();
                 }
-                TinhTien();
+                if(e.KeyCode == Keys.Add)
+                {
+                    ThemSP();
+                }
+                if (e.KeyCode == Keys.Delete)
+                {
+                    XoaSP();
+                }
             }
         }
         // Tạo chức năng các phím tắt cho danh sách sản phẩm
         private void dtgvTTHang_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Add)
+            if(dtgvTTHang.SelectedRows.Count > 0)
             {
-                ThemSP();
+                if (e.KeyCode == Keys.Add)
+                {
+                    ThemSP();
+                }
+                if (e.KeyCode == Keys.Subtract)
+                {
+                    GiamSP();
+                }
+                if (e.KeyCode == Keys.Delete)
+                {
+                    XoaSP();
+                }
             }
         }
         private void nmDiscount_KeyUp(object sender, KeyEventArgs e)
         {
             TinhTien();
         }
-
         private void btnHistory_Click(object sender, EventArgs e)
         {
             frmLichSuBH frm = new frmLichSuBH();
+            frm.dHH = new frmLichSuBH.MydelBH(LoadListProductsTT);
             frm.ShowDialog();
+            TangKeyValueHD();
         }
     }
     #endregion

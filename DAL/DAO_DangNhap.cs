@@ -57,9 +57,12 @@ namespace RetailStore.DAL
         }
         public bool DeleteAccount_DAL(string tentk)
         {
+            // Xóa tài khoản nhưng không xóa lịch sử giao dịch của nhân viên
             string query;
             int kq = 0;
-            query = "DELETE dbo.DANGNHAP WHERE TaiKhoan = '" + tentk + "'";
+            query = "alter table dbo.NHANVIEN nocheck constraint ALL " +
+                    "DELETE dbo.DANGNHAP WHERE TaiKhoan = '"+tentk+"' " +
+                    "alter table dbo.NHANVIEN check constraint ALL ";
             kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

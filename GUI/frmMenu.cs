@@ -20,7 +20,7 @@ namespace RetailStore
             InitializeComponent();
             LoadData();
             lblName.Text = frmDangnhap.nv.Tên;
-            frmThanhtoan frmTT = new frmThanhtoan(frmDangnhap.nv.Tên);
+            frmThanhtoan frmTT = new frmThanhtoan();
             addform(frmTT);
             if (frmDangnhap.nv.Loại_tài_khoản != true)
             {
@@ -78,7 +78,7 @@ namespace RetailStore
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             frmThongKe fDB = new frmThongKe();
-            lblTitle.Text = "BIỂU ĐỒ DOANH THU";
+            lblTitle.Text = "BIỂU ĐỒ VÀ BÁO CÁO";
             pnlNav.Top = btnDashboard.Top;
             pnlNav.Height = btnDashboard.Height;
             pnlNav.Left = btnDashboard.Left;
@@ -91,7 +91,7 @@ namespace RetailStore
             pnlNav.Top = btnTerminal.Top;
             pnlNav.Height = btnTerminal.Height;
             pnlNav.Left = btnTerminal.Left;
-            frmThanhtoan frmTT = new frmThanhtoan(frmDangnhap.nv.Tên);
+            frmThanhtoan frmTT = new frmThanhtoan();
             addform(frmTT);
         }
         // Form QUẢN LÝ KHO HÀNG

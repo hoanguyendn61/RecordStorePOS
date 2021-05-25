@@ -42,7 +42,7 @@ namespace RetailStore
             {
                 lvi.SubItems[2].Text = nmSLSP.Value.ToString();
                 double thanhtien = Convert.ToDouble(txtDongia.Text) * Convert.ToDouble(nmSLSP.Value);
-                lvi.SubItems[4].Text = thanhtien.ToString();
+                lvi.SubItems[4].Text = String.Format("{0:#,##0}", thanhtien);
                 dTT();
                 this.Dispose();
             }

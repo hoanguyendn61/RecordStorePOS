@@ -46,7 +46,10 @@
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -96,6 +99,8 @@
     <Compile Include="DAL\DAO_LoaiHang.cs" />
     <Compile Include="DAL\DAO_NhanVien.cs" />
     <Compile Include="DAL\DAO_ThongKe.cs" />
+    <Compile Include="DTO\BieuDo.cs" />
+    <Compile Include="DTO\BieuDoTop.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\DangNhap.cs" />
     <Compile Include="DTO\GioCong.cs" />
@@ -190,13 +195,64 @@
     <Compile Include="GUI\frmThemVaoHD.Designer.cs">
       <DependentUpon>frmThemVaoHD.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaDonReport.cs">
+    <Compile Include="Models\BaoCaoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaoCaoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaoCaoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_BHCuoiNgay.cs">
+      <DependentUpon>BaoCaoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_BHHangHoa.cs">
+      <DependentUpon>BaoCaoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_HHCuoiNgay.cs">
+      <DependentUpon>BaoCaoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_LNBanHang.cs">
+      <DependentUpon>BaoCaoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_LNHangHoa.cs">
+      <DependentUpon>BaoCaoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_NVBanHang.cs">
+      <DependentUpon>BaoCaoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BHCuoiNgayRpt.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HoaDonReport.Designer.cs">
+    <Compile Include="Reports\BHCuoiNgayRpt.Designer.cs">
+      <DependentUpon>BHCuoiNgayRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BHHangHoaRpt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BHHangHoaRpt.Designer.cs">
+      <DependentUpon>BHHangHoaRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HHCuoiNgayRpt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HHCuoiNgayRpt.Designer.cs">
+      <DependentUpon>HHCuoiNgayRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HoaDonReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HoaDonReport.Designer.cs">
       <DependentUpon>HoaDonReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaDonView.cs">
+    <Compile Include="Models\HoaDonView.cs">
       <DependentUpon>RetailStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -206,20 +262,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RetailStoreModel.Context.cs">
+    <Compile Include="Models\RetailStoreModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RetailStoreModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="RetailStoreModel.cs">
+    <Compile Include="Models\RetailStoreModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RetailStoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="RetailStoreModel.Designer.cs">
+    <Compile Include="Models\HoaDonModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RetailStoreModel.edmx</DependentUpon>
+      <DependentUpon>HoaDonModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LNBanHangRpt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LNBanHangRpt.Designer.cs">
+      <DependentUpon>LNBanHangRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LNHangHoaRpt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LNHangHoaRpt.Designer.cs">
+      <DependentUpon>LNHangHoaRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NVBanHangRpt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\NVBanHangRpt.Designer.cs">
+      <DependentUpon>NVBanHangRpt.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -263,7 +337,16 @@
     <EmbeddedResource Include="GUI\frmThemVaoHD.resx">
       <DependentUpon>frmThemVaoHD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaDonReport.resx">
+    <EmbeddedResource Include="Reports\BHCuoiNgayRpt.resx">
+      <DependentUpon>BHCuoiNgayRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BHHangHoaRpt.resx">
+      <DependentUpon>BHHangHoaRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HHCuoiNgayRpt.resx">
+      <DependentUpon>HHCuoiNgayRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HoaDonReport.resx">
       <DependentUpon>HoaDonReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -272,8 +355,28 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LNBanHangRpt.resx">
+      <DependentUpon>LNBanHangRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LNHangHoaRpt.resx">
+      <DependentUpon>LNHangHoaRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NVBanHangRpt.resx">
+      <DependentUpon>NVBanHangRpt.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <EntityDeploy Include="Models\BaoCaoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\BaoCaoModel.edmx.diagram">
+      <DependentUpon>BaoCaoModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RetailStore.DTO.BieuDo.datasource" />
+    <None Include="Properties\DataSources\RetailStore.DTO.BieuDoTop.datasource" />
+    <None Include="Properties\DataSources\RetailStore.DTO.ThongKe.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -283,12 +386,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="RetailStoreModel.edmx">
+    <EntityDeploy Include="Models\HoaDonModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RetailStoreModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>HoaDonModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="RetailStoreModel.edmx.diagram">
-      <DependentUpon>RetailStoreModel.edmx</DependentUpon>
+    <None Include="Models\HoaDonModel.edmx.diagram">
+      <DependentUpon>HoaDonModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -298,14 +401,24 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RetailStoreModel.Context.tt">
+    <Content Include="Models\BaoCaoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaoCaoModel.edmx</DependentUpon>
+      <LastGenOutput>BaoCaoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BaoCaoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaoCaoModel.edmx</DependentUpon>
+      <LastGenOutput>BaoCaoModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RetailStoreModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RetailStoreModel.Context.cs</LastGenOutput>
-      <DependentUpon>RetailStoreModel.edmx</DependentUpon>
+      <DependentUpon>HoaDonModel.edmx</DependentUpon>
     </Content>
-    <Content Include="RetailStoreModel.tt">
+    <Content Include="Models\RetailStoreModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RetailStoreModel.edmx</DependentUpon>
+      <DependentUpon>HoaDonModel.edmx</DependentUpon>
       <LastGenOutput>RetailStoreModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>

@@ -53,5 +53,13 @@ namespace RetailStore.DTO
         {
             return p2.Tên.CompareTo(p1.Tên);
         }
+        public static int Compare_AmountSpentASC(KhachHang p1, KhachHang p2)
+        {
+            return p1.Tổng_GD.CompareTo(p2.Tổng_GD);
+        }
+        public static int Compare_AmountSpentDESC(KhachHang p1, KhachHang p2)
+        {
+            return p2.Tổng_GD.CompareTo(p1.Tổng_GD);
+        }
     }
 }
