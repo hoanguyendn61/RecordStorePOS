@@ -5,12 +5,11 @@
       <PropertyRef Name="MaHD" />
       <PropertyRef Name="TenKH" />
       <PropertyRef Name="TenNV" />
-      <PropertyRef Name="NgayGD" />
     </Key>
     <Property Name="MaHD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="NgayGD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayGD" Type="DateTime" Precision="0" />
     <Property Name="ThoiGian" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="SL" Type="Int32" />
     <Property Name="TongTien" Type="Double" />
@@ -78,7 +77,7 @@
     <Property Name="SL_HD" Type="Int32" />
     <Property Name="DoanhThu" Type="Double" />
   </EntityType>
-  <EntityContainer Name="RetroCityPBL3Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="RetroCityPBL3Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="View_BHCuoiNgay" EntityType="Self.View_BHCuoiNgay" />
     <EntitySet Name="View_BHHangHoa" EntityType="Self.View_BHHangHoa" />
     <EntitySet Name="View_HHCuoiNgay" EntityType="Self.View_HHCuoiNgay" />

@@ -74,6 +74,7 @@ namespace RetailStore.GUI
             {
                 dgvLichSuBH.DataSource = BLL_HoaDon.Instance.GetListHD_BLL(from, to, idNV, idKH);
             }
+            btnCTHD.Enabled = true;
         }
         private void btnXem_Click(object sender, EventArgs e)
         {
@@ -91,6 +92,7 @@ namespace RetailStore.GUI
                 lblMaHD.Text = maHD;
                 dgvLichSuBH.DataSource = BLL_HoaDonCT.Instance.GetListHDCT_BLL(maHD);
             }
+            btnCTHD.Enabled = false;
         }
         // Hủy bỏ hóa đơn ứng với mã hóa đơn
         private void btnHuyBo_Click(object sender, EventArgs e)
@@ -132,17 +134,6 @@ namespace RetailStore.GUI
                     MessageBox.Show("Chưa nhập dữ liệu vào ô tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 e.Handled = true;
-            }
-        }
-
-        private void dgvLichSuBH_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = dgvLichSuBH.SelectedCells[0].RowIndex;
-            DataGridViewRow row = dgvLichSuBH.Rows[index];
-            if (row != null)
-            {
-                maHD = row.Cells[0].Value.ToString();
-                lblMaHD.Text = maHD;
             }
         }
     }

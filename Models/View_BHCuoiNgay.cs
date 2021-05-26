@@ -17,7 +17,7 @@ namespace RetailStore.Models
         public string MaHD { get; set; }
         public string TenKH { get; set; }
         public string TenNV { get; set; }
-        public System.DateTime NgayGD { get; set; }
+        public Nullable<System.DateTime> NgayGD { get; set; }
         public string ThoiGian { get; set; }
         public Nullable<int> SL { get; set; }
         public Nullable<double> TongTien { get; set; }

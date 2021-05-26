@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Configuration;
 namespace RetailStore.DAL
 {
     public class DataProvider
@@ -18,7 +18,7 @@ namespace RetailStore.DAL
             private set { DataProvider.instance = value; }
         }
         private DataProvider() { }
-        private string connectionSTR = "Data Source=DESKTOP-VV9H775\\SQLEXPRESS;Initial Catalog=RetroCityPBL3;Integrated Security=True";
+        private string connectionSTR = System.Configuration.ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
         // SELECT
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

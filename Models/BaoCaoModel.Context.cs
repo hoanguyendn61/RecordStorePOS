@@ -13,10 +13,10 @@ namespace RetailStore.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RetroCityPBL3Entities1 : DbContext
+    public partial class RetroCityPBL3Entities : DbContext
     {
-        public RetroCityPBL3Entities1()
-            : base("name=RetroCityPBL3Entities1")
+        public RetroCityPBL3Entities()
+            : base("name=RetroCityPBL3Entities")
         {
         }
     

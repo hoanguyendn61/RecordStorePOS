@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="003b47d6a34d4d2a8b9e807cd2a0dcf9" Name="Diagram1">
+      <Diagram DiagramId="c3510753d71844c18b81e79132bc2895" Name="Diagram1">
         <EntityTypeShape EntityType="RetroCityPBL3Model.View_BHCuoiNgay" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RetroCityPBL3Model.View_BHHangHoa" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RetroCityPBL3Model.View_HHCuoiNgay" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />

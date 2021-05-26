@@ -614,3 +614,5 @@ D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.R
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.Reports.NVBanHangRpt.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\DevExpress.XtraCharts.v19.2.UI.dll
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\DevExpress.XtraCharts.v19.2.UI.xml
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\RetroCityPBL3.mdf
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\RetroCityPBL3_log.ldf

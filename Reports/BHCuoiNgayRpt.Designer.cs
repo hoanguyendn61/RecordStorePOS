@@ -81,10 +81,12 @@ namespace RetailStore.Reports
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.objectDataSource2 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
+            this.objectDataSource3 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Title
@@ -718,18 +720,12 @@ namespace RetailStore.Reports
             this.xrLabel4.Text = "tongDT";
             this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrLabel4.TextFormatString = "{0:#,##0}₫";
-            // 
-            // objectDataSource2
-            // 
-            this.objectDataSource2.DataSourceType = null;
-            this.objectDataSource2.Name = "objectDataSource2";
-            // 
             // objectDataSource1
             // 
             this.objectDataSource1.Constructor = objectConstructorInfo1;
             this.objectDataSource1.DataSource = typeof(RetailStore.Models.View_BHCuoiNgay);
             this.objectDataSource1.Name = "objectDataSource1";
-            // 
+           
             // BHCuoiNgayRpt
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -743,7 +739,8 @@ namespace RetailStore.Reports
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.objectDataSource1,
-            this.objectDataSource2});
+            this.objectDataSource2,
+            this.objectDataSource3});
             this.DataSource = this.objectDataSource1;
             this.Dpi = 254F;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
@@ -764,6 +761,7 @@ namespace RetailStore.Reports
             ((System.ComponentModel.ISupportInitialize)(this.table2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -816,5 +814,6 @@ namespace RetailStore.Reports
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel sumGiamGia;
         private DevExpress.XtraReports.UI.XRPanel xrPanel1;
+        private DevExpress.DataAccess.ObjectBinding.ObjectDataSource objectDataSource3;
     }
 }
