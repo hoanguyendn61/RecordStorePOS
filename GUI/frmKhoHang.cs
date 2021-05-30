@@ -22,7 +22,6 @@ namespace RetailStore
         {
             InitializeComponent();
             LoadData();
-            DisableControls();
         }
         #region method
         private void LoadData()
@@ -94,6 +93,7 @@ namespace RetailStore
         {
             productList.DataSource = BLL_HangHoa.Instance.GetListProducts_BLL();
             SortListProduct();
+            DisableControls();
         }
         // Load DANH SACH HANG HOA BY CATEGORY
         private void LoadDSHangHoa(string categoryName)

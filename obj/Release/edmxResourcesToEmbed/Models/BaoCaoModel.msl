@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RetroCityPBL3ModelStoreContainer" CdmEntityContainer="RetroCityPBL3Entities">
+    <EntitySetMapping Name="View_BHCuoiNgay">
+      <EntityTypeMapping TypeName="RetroCityPBL3Model.View_BHCuoiNgay">
+        <MappingFragment StoreEntitySet="View_BHCuoiNgay">
+          <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="NgayGD" ColumnName="NgayGD" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_BHHangHoa">
+      <EntityTypeMapping TypeName="RetroCityPBL3Model.View_BHHangHoa">
+        <MappingFragment StoreEntitySet="View_BHHangHoa">
+          <ScalarProperty Name="MaHH" ColumnName="MaHH" />
+          <ScalarProperty Name="TenHH" ColumnName="TenHH" />
+          <ScalarProperty Name="SL_Ban" ColumnName="SL_Ban" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="NgayGD" ColumnName="NgayGD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_HHCuoiNgay">
+      <EntityTypeMapping TypeName="RetroCityPBL3Model.View_HHCuoiNgay">
+        <MappingFragment StoreEntitySet="View_HHCuoiNgay">
+          <ScalarProperty Name="MaHH" ColumnName="MaHH" />
+          <ScalarProperty Name="TenHH" ColumnName="TenHH" />
+          <ScalarProperty Name="SL_Ban" ColumnName="SL_Ban" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="NgayGD" ColumnName="NgayGD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_LNBanHang">
+      <EntityTypeMapping TypeName="RetroCityPBL3Model.View_LNBanHang">
+        <MappingFragment StoreEntitySet="View_LNBanHang">
+          <ScalarProperty Name="NgayGD" ColumnName="NgayGD" />
+          <ScalarProperty Name="TongTienHang" ColumnName="TongTienHang" />
+          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="TongGiaVon" ColumnName="TongGiaVon" />
+          <ScalarProperty Name="LoiNhuanGop" ColumnName="LoiNhuanGop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_LNHangHoa">
+      <EntityTypeMapping TypeName="RetroCityPBL3Model.View_LNHangHoa">
+        <MappingFragment StoreEntitySet="View_LNHangHoa">
+          <ScalarProperty Name="MaHH" ColumnName="MaHH" />
+          <ScalarProperty Name="TenHH" ColumnName="TenHH" />
+          <ScalarProperty Name="SL_Ban" ColumnName="SL_Ban" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="TongGiaVon" ColumnName="TongGiaVon" />
+          <ScalarProperty Name="LoiNhuan" ColumnName="LoiNhuan" />
+          <ScalarProperty Name="NgayGD" ColumnName="NgayGD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_NVBanHang">
+      <EntityTypeMapping TypeName="RetroCityPBL3Model.View_NVBanHang">
+        <MappingFragment StoreEntitySet="View_NVBanHang">
+          <ScalarProperty Name="NgayGD" ColumnName="NgayGD" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="SL_HD" ColumnName="SL_HD" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

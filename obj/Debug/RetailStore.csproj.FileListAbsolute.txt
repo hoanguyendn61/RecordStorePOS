@@ -401,9 +401,6 @@ D:\Download\Study\HOC\YEAR 2\HOCKY I\PBL2\RetroCityPBL3\obj\Debug\RetailStore.cs
 D:\Download\Study\HOC\YEAR 2\HOCKY I\PBL2\RetroCityPBL3\obj\Debug\aaa.exe
 D:\Download\Study\HOC\YEAR 2\HOCKY I\PBL2\RetroCityPBL3\obj\Debug\aaa.pdb
 D:\Download\Study\HOC\YEAR 2\HOCKY I\PBL2\RetroCityPBL3\obj\Debug\RetailStore.GUI.frmSuppliers.resources
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\aaa.exe.config
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\aaa.exe
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\aaa.pdb
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\DevExpress.Charts.v19.2.Core.dll
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\DevExpress.Data.v19.2.dll
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\DevExpress.DataAccess.v19.2.dll
@@ -583,7 +580,6 @@ D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\de\DevExpress
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\es\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\ja\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.csprojAssemblyReference.cache
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.frmDangnhap.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.frmThongKe.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.frmDoimatkhau.resources
@@ -597,11 +593,8 @@ D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.f
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.HoaDonReport.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.Properties.Resources.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.csproj.GenerateResource.cache
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\aaa.exe.licenses
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.csproj.CoreCompileInputs.cache
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.csproj.CopyComplete
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\aaa.exe
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\aaa.pdb
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.GUI.frmNhaCungCap.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.GUI.frmGioCong.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.GUI.frmGioCongCT.resources
@@ -614,5 +607,10 @@ D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.R
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.Reports.NVBanHangRpt.resources
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\DevExpress.XtraCharts.v19.2.UI.dll
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\DevExpress.XtraCharts.v19.2.UI.xml
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\RetroCityPBL3.mdf
-D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\RetroCityPBL3_log.ldf
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\RetroCityPBL3.exe.config
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\RetroCityPBL3.exe
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Debug\RetroCityPBL3.pdb
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetroCityPBL3.exe.licenses
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetroCityPBL3.exe
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetroCityPBL3.pdb
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Debug\RetailStore.csprojAssemblyReference.cache

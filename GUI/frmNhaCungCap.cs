@@ -24,7 +24,6 @@ namespace RetailStore.GUI
         {
             dGVSupplier.DataSource = supplierList;
             cbSapxepNCC.SelectedIndex = 0;
-            DisableControls();
             LoadDSSupplier();
             AddSupplierBinding();
         }
@@ -32,6 +31,7 @@ namespace RetailStore.GUI
         {
             supplierList.DataSource = BLL_NhaCungCap.Instance.GetListSuppliers_BLL();
             SortListSupplier();
+            DisableControls();
         }
         private void SortListSupplier()
         {

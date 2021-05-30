@@ -28,12 +28,12 @@ namespace RetailStore
             cmbSapxepNV.SelectedIndex = 0;
             LoadDSNhanVien();
             AddEmployeeBinding();
-            DisableControls();
         }
         private void LoadDSNhanVien()
         {
             dsnv.DataSource = BLL_NhanVien.Instance.GetListEmployees_BLL();
             SortListEmployee();
+            DisableControls();
         }
         private List<string> ListUsernamesDGV()
         {

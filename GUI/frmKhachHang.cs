@@ -28,12 +28,12 @@ namespace RetailStore
             cmbSapxepKH.SelectedIndex = 0;
             LoadDSKhachhang();
             AddCustomersBinding();
-            DisableControls();
         }
         private void LoadDSKhachhang()
         {
             dskh.DataSource = BLL_KhachHang.Instance.GetListCustomers_BLL();
             SortListCustomer();
+            DisableControls();
         }
         private void SortListCustomer()
         {
@@ -225,6 +225,7 @@ namespace RetailStore
                 lblName.Text = row.Cells[1].Value.ToString();
                 dgvLichSuGD.DataSource = BLL_HoaDon.Instance.GetListHD_BLL(idKH);
                 dgvLichSuGD.Columns[2].Visible = false;
+                btnXemCTHD.Enabled = true;
             }
         }
         // Xem chi tiết hóa đơn ứng với mã hóa đơn
@@ -237,6 +238,7 @@ namespace RetailStore
                 string idHD = row.Cells[0].Value.ToString();
                 lblHD.Text = idHD;
                 dgvLichSuGD.DataSource = BLL_HoaDonCT.Instance.GetListHDCT_BLL(idHD);
+                btnXemCTHD.Enabled = false;
             }
         }
         #endregion

@@ -7,7 +7,7 @@
     <ProjectGuid>{8F42F1FB-8F24-4F50-A77C-00D9EFB950B1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>RetailStore</RootNamespace>
-    <AssemblyName>aaa</AssemblyName>
+    <AssemblyName>RetroCityPBL3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>store.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -435,13 +438,11 @@
       <DependentUpon>HoaDonModel.edmx</DependentUpon>
       <LastGenOutput>RetailStoreModel.cs</LastGenOutput>
     </Content>
-    <Content Include="RetroCityPBL3.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="RetroCityPBL3.mdf" />
     <Content Include="RetroCityPBL3_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>RetroCityPBL3.mdf</DependentUpon>
     </Content>
+    <Content Include="store.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

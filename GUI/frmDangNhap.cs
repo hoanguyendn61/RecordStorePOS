@@ -61,27 +61,19 @@ namespace RetailStore
                 e.Cancel = true;
             }
         }
-        private void btnDangnhap_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Login();
-            }
-        }
         private void frmDangnhap_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Login();
+                if (txtMatkhau.Text == "" || txtTaikhoan.Text == "")
+                {
+                    MessageBox.Show("Chưa nhập tài khoản hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Login();
+                }
             }
         }
-        private void txtMatkhau_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Login();
-            }
-        }
-
     }
 }

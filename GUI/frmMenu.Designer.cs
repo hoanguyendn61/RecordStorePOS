@@ -48,10 +48,10 @@
             this.btnDoiPass = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlfrmLoader = new System.Windows.Forms.Panel();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -183,7 +183,7 @@
             this.btnTerminal.Name = "btnTerminal";
             this.btnTerminal.Size = new System.Drawing.Size(300, 75);
             this.btnTerminal.TabIndex = 2;
-            this.btnTerminal.Text = "Thanh toán";
+            this.btnTerminal.Text = "Bán hàng";
             this.btnTerminal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTerminal.UseVisualStyleBackColor = true;
             this.btnTerminal.Click += new System.EventHandler(this.btnTerminal_Click);
@@ -298,6 +298,17 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "label1";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Josefin Sans", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblStatus.Location = new System.Drawing.Point(734, 27);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(129, 44);
+            this.lblStatus.TabIndex = 5;
+            this.lblStatus.Text = "lblStatus";
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -324,17 +335,6 @@
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(1582, 21);
             this.hScrollBar1.TabIndex = 1;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Josefin Sans", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStatus.Location = new System.Drawing.Point(734, 27);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(129, 44);
-            this.lblStatus.TabIndex = 5;
-            this.lblStatus.Text = "lblStatus";
             // 
             // frmMenu
             // 

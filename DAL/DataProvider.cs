@@ -18,7 +18,9 @@ namespace RetailStore.DAL
             private set { DataProvider.instance = value; }
         }
         private DataProvider() { }
-        private string connectionSTR = System.Configuration.ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        static string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        static string connSTR = System.Configuration.ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
+        private string connectionSTR = connSTR.Replace("%APPDATA%",appData);
         // SELECT
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

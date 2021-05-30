@@ -31,7 +31,7 @@ namespace RetailStore
         }
         private void LoadData()
         {
-            lblTitle.Text = "THANH TOÁN";
+            lblTitle.Text = "QUẢN LÝ BÁN HÀNG";
             if (eeStatus) lblStatus.Text = "Chưa bấm giờ vào làm";
             pnlNav.Top = btnTerminal.Top;
             pnlNav.Height = btnTerminal.Height;
@@ -87,7 +87,7 @@ namespace RetailStore
         // Form QUẢN LÝ BÁN HÀNG
         private void btnTerminal_Click(object sender, EventArgs e)
         {
-            lblTitle.Text = "THANH TOÁN";
+            lblTitle.Text = "QUẢN LÝ BÁN HÀNG";
             pnlNav.Top = btnTerminal.Top;
             pnlNav.Height = btnTerminal.Height;
             pnlNav.Left = btnTerminal.Left;

@@ -86,14 +86,7 @@ namespace RetailStore.BLL
         }
         public string FindReceiptKeyMax_BLL()
         {
-            string maHDmax = "HD000000";
-                foreach (HoaDon i in GetListHD_BLL())
-                {
-                    if (String.Compare(maHDmax, i.Mã_HĐơn) < 0)
-                    {
-                    maHDmax = i.Mã_HĐơn;
-                    }
-                }
+            string maHDmax = DAO_HoaDon.Instance.FindReceiptKeyMax_DAL();
             return maHDmax;
         }
         public bool InsertHoaDon_BLL(HoaDon hoaDon)

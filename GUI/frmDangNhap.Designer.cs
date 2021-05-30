@@ -55,7 +55,6 @@
             this.txtTaikhoan.Name = "txtTaikhoan";
             this.txtTaikhoan.Size = new System.Drawing.Size(262, 26);
             this.txtTaikhoan.TabIndex = 1;
-            this.txtTaikhoan.Text = "admin";
             // 
             // txtMatkhau
             // 
@@ -71,9 +70,7 @@
             this.txtMatkhau.Name = "txtMatkhau";
             this.txtMatkhau.Size = new System.Drawing.Size(262, 26);
             this.txtMatkhau.TabIndex = 2;
-            this.txtMatkhau.Text = "admin";
             this.txtMatkhau.UseSystemPasswordChar = true;
-            this.txtMatkhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatkhau_KeyDown);
             // 
             // label1
             // 
@@ -134,7 +131,6 @@
             this.btnDangnhap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnDangnhap.UseVisualStyleBackColor = false;
             this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
-            this.btnDangnhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDangnhap_KeyDown);
             // 
             // pictureBox1
             // 
@@ -167,6 +163,7 @@
             this.Controls.Add(this.grpbDangnhap);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "frmDangnhap";
             this.Text = "Tiệm đĩa Retro City";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDangnhap_KeyDown);

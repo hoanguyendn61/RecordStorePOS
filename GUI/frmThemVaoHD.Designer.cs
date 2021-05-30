@@ -123,6 +123,7 @@
             0,
             0,
             0});
+            this.nmSLSP.ValueChanged += new System.EventHandler(this.nmSLSP_ValueChanged);
             // 
             // lb
             // 
@@ -172,7 +173,6 @@
             this.btnHuySL.Text = "Hủy";
             this.btnHuySL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuySL.UseVisualStyleBackColor = true;
-            this.btnHuySL.Click += new System.EventHandler(this.btnHuySL_Click);
             // 
             // label1
             // 

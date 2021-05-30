@@ -58,7 +58,12 @@ namespace RetailStore.DAL
             }
             return list;
         }
-
+        public string FindReceiptKeyMax_DAL()
+        {
+            string query = "SELECT MAX(MaHD) FROM dbo.HOADON";
+            object kq = DataProvider.Instance.ExecuteScalar(query);
+            return (string)kq;
+        }
 
         private string format = "yyyy-MM-dd HH:mm:ss";
         public bool InsertHoaDon_DAL(HoaDon hoaDon)
@@ -78,6 +83,5 @@ namespace RetailStore.DAL
             int kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
-
     }
 }
