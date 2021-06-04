@@ -28,19 +28,14 @@ namespace RetailStore.BLL
         private BLL_DangNhap()
         {
         }
-
         public DangNhap Login_BLL(string username, string password)
         {
             return DAO_DangNhap.Instance.Login_DAL(username, password);
         }
-        public List<DangNhap> GetListAccounts_BLL()
+        public List<DangNhap> GetListAccount_BLL()
         {
-            return DAO_DangNhap.Instance.GetListAccounts_DAL();
+            return DAO_DangNhap.Instance.GetListAccount_DAL();
         }
-        //public bool InsertAccount_BLL(string tenTK, string mkNV)
-        //{
-        //    return DAO_DangNhap.Instance.InsertAccount_DAL(tenTK, mkNV);
-        //}
         public bool DeleteAccount_BLL(string tentk)
         {
             return DAO_DangNhap.Instance.DeleteAccount_DAL(tentk);

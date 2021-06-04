@@ -21,6 +21,7 @@ namespace RetailStore
             InitializeComponent();
             hdon = hd;
             txtTong.Text = String.Format("{0:#,##0}", hdon.Tổng_cộng);
+            TinhTienTraLai();
             nmKhachdua.Select();
         }
         double Tralai;
@@ -52,10 +53,24 @@ namespace RetailStore
                 MessageBox.Show("Khách đưa chưa đủ tiền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void btnKoInHD_Click(object sender, EventArgs e)
+        private void btnDong_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (Tralai >= 0)
+            {
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Khách đưa chưa đủ tiền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-        
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if(Tralai < 0)
+            {
+                MessageBox.Show("Khách đưa chưa đủ tiền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Cancel = true;
+            }
+        }
     }
 }

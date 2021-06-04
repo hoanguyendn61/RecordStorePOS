@@ -60,11 +60,11 @@ namespace RetailStore.BLL
                 return false;
             }
         }
-        public bool CheckUsername_BLL(List<string> Usernames, string username)
+        public bool CheckUsername_BLL(string username)
         {
-            foreach(string i in Usernames)
+            foreach(DangNhap i in BLL_DangNhap.Instance.GetListAccount_BLL())
             {
-                if(i == username)
+                if(i.Tên_tài_khoản == username)
                 {
                     return true;
                 }

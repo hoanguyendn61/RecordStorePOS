@@ -37,7 +37,7 @@ namespace RetailStore.DAL
                 return null;
             }
         }
-        public List<DangNhap> GetListAccounts_DAL()
+        public List<DangNhap> GetListAccount_DAL()
         {
             List<DangNhap> list = new List<DangNhap>();
             string query = "SELECT * FROM DANGNHAP";

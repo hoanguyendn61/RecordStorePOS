@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnInHD = new System.Windows.Forms.Button();
-            this.btnKoInHD = new System.Windows.Forms.Button();
+            this.btnDong = new System.Windows.Forms.Button();
             this.nmKhachdua = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nmKhachdua)).BeginInit();
@@ -111,21 +111,21 @@
             this.btnInHD.UseVisualStyleBackColor = false;
             this.btnInHD.Click += new System.EventHandler(this.btnInHD_Click);
             // 
-            // btnKoInHD
+            // btnDong
             // 
-            this.btnKoInHD.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnKoInHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKoInHD.Font = new System.Drawing.Font("Josefin Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKoInHD.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnKoInHD.Image = ((System.Drawing.Image)(resources.GetObject("btnKoInHD.Image")));
-            this.btnKoInHD.Location = new System.Drawing.Point(327, 250);
-            this.btnKoInHD.Name = "btnKoInHD";
-            this.btnKoInHD.Size = new System.Drawing.Size(183, 94);
-            this.btnKoInHD.TabIndex = 8;
-            this.btnKoInHD.Text = "ĐÓNG";
-            this.btnKoInHD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKoInHD.UseVisualStyleBackColor = false;
-            this.btnKoInHD.Click += new System.EventHandler(this.btnKoInHD_Click);
+            this.btnDong.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDong.Font = new System.Drawing.Font("Josefin Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDong.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
+            this.btnDong.Location = new System.Drawing.Point(327, 250);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(183, 94);
+            this.btnDong.TabIndex = 8;
+            this.btnDong.Text = "ĐÓNG";
+            this.btnDong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDong.UseVisualStyleBackColor = false;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // nmKhachdua
             // 
@@ -167,7 +167,7 @@
             this.ClientSize = new System.Drawing.Size(569, 355);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nmKhachdua);
-            this.Controls.Add(this.btnKoInHD);
+            this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnInHD);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -191,7 +191,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnInHD;
-        private System.Windows.Forms.Button btnKoInHD;
+        private System.Windows.Forms.Button btnDong;
         public System.Windows.Forms.TextBox txtTralai;
         public System.Windows.Forms.NumericUpDown nmKhachdua;
         private System.Windows.Forms.Label label4;

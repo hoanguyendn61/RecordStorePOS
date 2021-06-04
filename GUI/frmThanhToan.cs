@@ -157,7 +157,7 @@ namespace RetailStore
                     }
                     else
                     {
-                        MessageBox.Show("Nhập quá số lượng còn lại của sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Nhập quá số lượng tồn kho của sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 TinhTien();

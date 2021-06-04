@@ -17,6 +17,7 @@ namespace RetailStore
         {
             InitializeComponent();
             btnHuySL.DialogResult = DialogResult.Cancel;
+            btnXacnhanSL.DialogResult = DialogResult.OK;
             lvi = i;
             SetGUI(lvi);
         }
@@ -41,7 +42,7 @@ namespace RetailStore
             }
             else
             {
-                MessageBox.Show("Nhập quá số lượng còn lại của sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Nhập quá số lượng tồn kho của sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 nmSLSP.Focus();
             }
         }
@@ -51,7 +52,7 @@ namespace RetailStore
             string idHH = lvi.SubItems[0].Text;
             // gán số lượng hàng hóa tương ứng với idHH
             int slH = BLL_HangHoa.Instance.GetProductQuanityByID_BLL(idHH);
-            if (nmSLSP.Value <= slH)
+            if (nmSLSP.Value <= slH && nmSLSP.Value >= 1)
             {
                 btnXacnhanSL.DialogResult = DialogResult.OK;
             }

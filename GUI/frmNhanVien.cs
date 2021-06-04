@@ -35,15 +35,6 @@ namespace RetailStore
             SortListEmployee();
             DisableControls();
         }
-        private List<string> ListUsernamesDGV()
-        {
-            List<string> l = new List<string>();
-            foreach (DataGridViewRow i in dtgvNhanvien.Rows)
-            {
-                l.Add(i.Cells[7].Value.ToString());
-            }
-            return l;
-        }
         private void GetRowValue()
         {
             int index = dtgvNhanvien.SelectedCells[0].RowIndex;
@@ -200,7 +191,7 @@ namespace RetailStore
             {
                 if (tenNV != "" && sdtNV != "" && cmndNV != "" && mkNV != "")
                 {
-                    if (!BLL_NhanVien.Instance.CheckUsername_BLL(ListUsernamesDGV(), tkNV))
+                    if (!BLL_NhanVien.Instance.CheckUsername_BLL(tkNV))
                     {
                         if (BLL_NhanVien.Instance.InsertEmployee_BLL(nv, dn))
                         {
