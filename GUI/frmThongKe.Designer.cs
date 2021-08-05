@@ -191,13 +191,17 @@
             // 
             // btnInCN
             // 
+            this.btnInCN.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnInCN.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnInCN.FlatAppearance.BorderSize = 3;
             this.btnInCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInCN.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInCN.Location = new System.Drawing.Point(298, 192);
             this.btnInCN.Name = "btnInCN";
-            this.btnInCN.Size = new System.Drawing.Size(170, 99);
+            this.btnInCN.Size = new System.Drawing.Size(188, 99);
             this.btnInCN.TabIndex = 3;
             this.btnInCN.Text = "In báo cáo";
-            this.btnInCN.UseVisualStyleBackColor = true;
+            this.btnInCN.UseVisualStyleBackColor = false;
             this.btnInCN.Click += new System.EventHandler(this.btnInCN_Click);
             // 
             // rBHHCuoiNgay
@@ -288,13 +292,17 @@
             // 
             // btnInBH
             // 
+            this.btnInBH.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnInBH.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnInBH.FlatAppearance.BorderSize = 3;
             this.btnInBH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInBH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInBH.Location = new System.Drawing.Point(308, 192);
             this.btnInBH.Name = "btnInBH";
-            this.btnInBH.Size = new System.Drawing.Size(170, 99);
+            this.btnInBH.Size = new System.Drawing.Size(188, 99);
             this.btnInBH.TabIndex = 3;
             this.btnInBH.Text = "In báo cáo";
-            this.btnInBH.UseVisualStyleBackColor = true;
+            this.btnInBH.UseVisualStyleBackColor = false;
             this.btnInBH.Click += new System.EventHandler(this.btnInBH_Click);
             // 
             // rBNVBanHang
@@ -405,13 +413,17 @@
             // 
             // btnInHH
             // 
+            this.btnInHH.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnInHH.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnInHH.FlatAppearance.BorderSize = 3;
             this.btnInHH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInHH.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInHH.Location = new System.Drawing.Point(320, 192);
             this.btnInHH.Name = "btnInHH";
-            this.btnInHH.Size = new System.Drawing.Size(170, 99);
+            this.btnInHH.Size = new System.Drawing.Size(188, 99);
             this.btnInHH.TabIndex = 3;
             this.btnInHH.Text = "In báo cáo";
-            this.btnInHH.UseVisualStyleBackColor = true;
+            this.btnInHH.UseVisualStyleBackColor = false;
             this.btnInHH.Click += new System.EventHandler(this.btnInHH_Click);
             // 
             // rBLNHangHoa

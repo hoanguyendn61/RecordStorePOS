@@ -227,15 +227,16 @@ namespace RetailStore.GUI
             // 
             // btnCTHD
             // 
+            this.btnCTHD.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnCTHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCTHD.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCTHD.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCTHD.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCTHD.Location = new System.Drawing.Point(982, 7);
             this.btnCTHD.Name = "btnCTHD";
             this.btnCTHD.Size = new System.Drawing.Size(108, 44);
             this.btnCTHD.TabIndex = 9;
             this.btnCTHD.Text = "Chi tiết";
-            this.btnCTHD.UseVisualStyleBackColor = true;
+            this.btnCTHD.UseVisualStyleBackColor = false;
             this.btnCTHD.Click += new System.EventHandler(this.btnCTHD_Click);
             // 
             // label3

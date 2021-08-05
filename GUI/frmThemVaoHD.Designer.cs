@@ -138,16 +138,19 @@
             // 
             // btnXacnhanSL
             // 
+            this.btnXacnhanSL.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnXacnhanSL.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnXacnhanSL.FlatAppearance.BorderSize = 3;
             this.btnXacnhanSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXacnhanSL.Font = new System.Drawing.Font("Josefin Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacnhanSL.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnXacnhanSL.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnXacnhanSL.Location = new System.Drawing.Point(303, 247);
             this.btnXacnhanSL.Name = "btnXacnhanSL";
             this.btnXacnhanSL.Size = new System.Drawing.Size(229, 61);
             this.btnXacnhanSL.TabIndex = 27;
             this.btnXacnhanSL.Text = "Xác nhận";
             this.btnXacnhanSL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXacnhanSL.UseVisualStyleBackColor = true;
+            this.btnXacnhanSL.UseVisualStyleBackColor = false;
             this.btnXacnhanSL.Click += new System.EventHandler(this.btnXacnhanSL_Click);
             // 
             // label3

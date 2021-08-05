@@ -64,6 +64,7 @@
             this.sl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.donGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.thanhTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblNgayGD = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbTenKH = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblMaHD = new System.Windows.Forms.Label();
-            this.lblNgayGD = new System.Windows.Forms.Label();
             this.pnlLoai.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -381,9 +381,12 @@
             this.btnTT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTT.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTT.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnTT.FlatAppearance.BorderSize = 6;
             this.btnTT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTT.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTT.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnTT.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnTT.Image = ((System.Drawing.Image)(resources.GetObject("btnTT.Image")));
             this.btnTT.Location = new System.Drawing.Point(14, 111);
             this.btnTT.Name = "btnTT";
@@ -391,7 +394,7 @@
             this.btnTT.TabIndex = 10;
             this.btnTT.Text = "Thanh toán [F1]";
             this.btnTT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTT.UseVisualStyleBackColor = true;
+            this.btnTT.UseVisualStyleBackColor = false;
             this.btnTT.Click += new System.EventHandler(this.btnTT_Click);
             // 
             // label6
@@ -548,6 +551,17 @@
             this.thanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.thanhTien.Width = 130;
             // 
+            // lblNgayGD
+            // 
+            this.lblNgayGD.AutoSize = true;
+            this.lblNgayGD.Font = new System.Drawing.Font("Josefin Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNgayGD.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblNgayGD.Location = new System.Drawing.Point(239, 158);
+            this.lblNgayGD.Name = "lblNgayGD";
+            this.lblNgayGD.Size = new System.Drawing.Size(141, 38);
+            this.lblNgayGD.TabIndex = 17;
+            this.lblNgayGD.Text = "lblNgayGD";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -680,17 +694,6 @@
             this.lblMaHD.Size = new System.Drawing.Size(117, 38);
             this.lblMaHD.TabIndex = 0;
             this.lblMaHD.Text = "lblMaHD";
-            // 
-            // lblNgayGD
-            // 
-            this.lblNgayGD.AutoSize = true;
-            this.lblNgayGD.Font = new System.Drawing.Font("Josefin Sans SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayGD.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblNgayGD.Location = new System.Drawing.Point(239, 158);
-            this.lblNgayGD.Name = "lblNgayGD";
-            this.lblNgayGD.Size = new System.Drawing.Size(141, 38);
-            this.lblNgayGD.TabIndex = 17;
-            this.lblNgayGD.Text = "lblNgayGD";
             // 
             // frmThanhtoan
             // 

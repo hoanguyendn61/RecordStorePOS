@@ -116,12 +116,11 @@
             // 
             // btnDangnhap
             // 
-            this.btnDangnhap.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDangnhap.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnDangnhap.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.btnDangnhap.FlatAppearance.BorderSize = 2;
             this.btnDangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangnhap.Font = new System.Drawing.Font("Josefin Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangnhap.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnDangnhap.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDangnhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangnhap.Image")));
             this.btnDangnhap.Location = new System.Drawing.Point(190, 128);
             this.btnDangnhap.Name = "btnDangnhap";

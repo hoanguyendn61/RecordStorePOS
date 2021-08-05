@@ -96,11 +96,12 @@
             // 
             // btnInHD
             // 
-            this.btnInHD.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInHD.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnInHD.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnInHD.FlatAppearance.BorderSize = 3;
             this.btnInHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInHD.Font = new System.Drawing.Font("Josefin Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInHD.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnInHD.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnInHD.Image = ((System.Drawing.Image)(resources.GetObject("btnInHD.Image")));
             this.btnInHD.Location = new System.Drawing.Point(53, 250);
             this.btnInHD.Name = "btnInHD";

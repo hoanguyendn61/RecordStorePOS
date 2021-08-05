@@ -136,15 +136,18 @@
             // 
             // btnLuuMK
             // 
+            this.btnLuuMK.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnLuuMK.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLuuMK.FlatAppearance.BorderSize = 3;
             this.btnLuuMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuMK.Font = new System.Drawing.Font("Josefin Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuMK.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLuuMK.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLuuMK.Location = new System.Drawing.Point(63, 458);
             this.btnLuuMK.Name = "btnLuuMK";
             this.btnLuuMK.Size = new System.Drawing.Size(149, 62);
             this.btnLuuMK.TabIndex = 5;
             this.btnLuuMK.Text = "LƯU";
-            this.btnLuuMK.UseVisualStyleBackColor = true;
+            this.btnLuuMK.UseVisualStyleBackColor = false;
             this.btnLuuMK.Click += new System.EventHandler(this.btnLuuMK_Click);
             // 
             // btnHuyDoiMK

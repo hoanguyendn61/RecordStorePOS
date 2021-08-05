@@ -44,9 +44,12 @@ namespace RetailStore.GUI
             // 
             // btnLuuGC
             // 
+            this.btnLuuGC.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnLuuGC.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLuuGC.FlatAppearance.BorderSize = 3;
             this.btnLuuGC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuGC.Font = new System.Drawing.Font("Josefin Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuGC.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLuuGC.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLuuGC.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuGC.Image")));
             this.btnLuuGC.Location = new System.Drawing.Point(82, 259);
             this.btnLuuGC.Name = "btnLuuGC";
@@ -54,7 +57,7 @@ namespace RetailStore.GUI
             this.btnLuuGC.TabIndex = 9;
             this.btnLuuGC.Text = "Lưu";
             this.btnLuuGC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLuuGC.UseVisualStyleBackColor = true;
+            this.btnLuuGC.UseVisualStyleBackColor = false;
             this.btnLuuGC.Click += new System.EventHandler(this.btnLuuGC_Click);
             // 
             // btnHuyGC
