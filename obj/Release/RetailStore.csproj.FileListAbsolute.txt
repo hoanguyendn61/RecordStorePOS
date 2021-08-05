@@ -210,3 +210,4 @@ D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\bin\Release\RetroCityPB
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Release\RetroCityPBL3.exe.licenses
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Release\RetroCityPBL3.exe
 D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Release\RetroCityPBL3.pdb
+D:\Download\Study\hoc\YEAR 2\HOCKY II\PBL3\RetroCityPBL3\obj\Release\RetailStore.csprojAssemblyReference.cache

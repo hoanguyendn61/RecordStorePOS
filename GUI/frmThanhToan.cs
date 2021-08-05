@@ -265,6 +265,7 @@ namespace RetailStore
                     f.ShowDialog();
                     TangKeyValueHD();
                     HuyHD();
+                    LoadListProductsTT();
                 }
                 else
                 {
